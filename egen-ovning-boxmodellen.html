@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 350px;
+            /*i praktiken bredden på förälderns "kontenta"/content eftersom förälder har content-box by default*/
+            border: 5px solid darkslategrey;
+            padding: 10px;
+        }
+
+        .content-box {
+            box-sizing: content-box;
+            padding: 30px;
+            color: darkolivegreen;
+            background-color: beige;
+            border: 4px solid darkorange;
+            width: 350px;
+        }
+
+        .content-box-in {
+            box-sizing: content-box;
+            padding: 30px;
+            color: black;
+            background-color: rgb(172, 235, 232);
+            border: 4px solid lightseagreen;
+            width: auto;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+            padding: 50px;
+            color: black;
+            background-color: rgb(86, 213, 177);
+            border: 4px solid black;
+            width: auto;
+        }
+
+        /*Övn.1 a) ovan: 
+        
+        Beräkning av content-bredden vid width: 350px
+        
+         Content-bredden för content-breden för .content-box = 350 + 30x2 (padding)+ 4x2 (border) = 418px.
+        
+        Conent-bredden vid border-box
+        width: border-box = 350px - 30x2 - 4x2 = 282px
+        Själva content är på 282 px och minskar med padding och border.
+        Contentan krymper.
+
+        1 b) Varför ser .container (föräldern) större ut än 350px?
+
+        Slutsats: den faktiska bredden för .container vid .content-box (som är default) leder till att boxen får ytterbredd på 350 + 20 + 10 = 380px
+    
+        */
+
+
+        /* Övn:2 nedan 
+        Öka padding från 30px till 50px.
+        Lägg till margin ovanför och nedanför boxen.
+        Ändra width till 500px (medan föräldern är på 350px)
+        Ändra width till 350px.
+        Ändra width till 100 %. Är det 100 % av vad?
+        Ändra width till auto. Vad betyder auto?
+        */
+
+        /*.border-box {
+            box-sizing: border-box;
+            padding: 50px;
+            color: black;
+            background-color: rgb(85, 213, 177);
+            border: 4px solid black;
+            width: 100%;
+            margin: 10px 0px;
+        }*/
+
+        /* 
+       
+        box-sizing: border-box; 
+        = boxens content beräknas genom att padding och border avräknas från den totala bredden (width).
+        border-box: är en beräkningsgrund, och inte en "en garanti" för att boxen rymms inom föräldern.
+        Width=500px - den totala bredden på boxen är 500px, och den sticker utanför .containern (350px).
+
+        Vid width: 350px kryper contantan till 242px (350px-50x2-4x2)
+        
+        width: 100%; på boxen .border-box = boxen ska vara lika stor som föräldern (.container) "om inget annat påverkar det, såsom margin, annan CSS regel som tolkas före m.fl.(AI förklaring).
+
+        width: auto;
+        Auto: "Ta upp det tillgängliga uttrymmet i förälderns content box" (AI)
+        Totalresultatet blir: 350px
+        Content tar 242px (i och med "border-box").
+
+        Men varför når inte boxen med class .border-box ända ut till förälderns kanter vid width: 100%. Den skulle ju fylla ut till förälderna bredd?
+        Slutsats: Barnens bredd räknas alltid mot förälderns content box, och inte mot förälderns padding eller border.
+        350px slutar vid .containers (förälderns) padding-kant, inte vid dess ytterkant. M.a.o. Container har en bredd på 350px.
+        
+        .border-box {width: 100%}; blir 350px
+
+        .border-box {width: auto}; visuellt ser det likadant ut i min övning. 
+
+        Barnets bredd räknas mot förälderns content-uttrymme (content box). Den beräknas inte mot förälderns padding, border eller marginaler (när föräldern har inställning content-box så ryms barnet innanför kanterna för förälderns padding, dvs. har samma mått som förälderns content). Är förälderns width 350px så matchas barnets width mot det.
+
+        Förstår jag korrekt så skillnaden mellan border-box och content-box en skillnad i beräkningsgrund för hur content beräknas för varje box och hur den totala bredden för boxen blir. Den påverkar inte hur barnet räknar sin bredd mot föräldern.
+
+        Barnet får 100 % bredd av förälderns kontenta oavsett om barnet i sig har inställningen content-box eller border box.
+
+        Här får man alltså skilja mellan 1. Hur bred får boxen vara? 2. Hur fördelas bredden inom boxen (t.ex. inom barnet)
+
+        1. Baseras på förälderns content-bredd
+        2. Hur breden frödelas inom boxen avgörs av box-sizing.
+
+
+        */
+
+        /* Övn.3 nedan*/
+
+
+        /*.border-box {
+            box-sizing: border-box;
+            padding: 50px;
+            color: black;
+            background-color: lightgrey;
+            border: 4px solid black;
+            width: auto;    
+            margin: 10px 0;
+
+        }*/
+
+        /* Övn. 4: Få en box med inställning content-box att rymmas inom .container trots padding och border.
+        
+        Slutats: width: auto; - fungerar det men plats för content minskar med padding och border: Då kan man kanske välja border-box direkt i stället. */
+    </style>
+</head>
+
+<body>
+    <!-- Egen övning -->
+    <div class="container">
+        <div class="content-box">
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam eligendi corrupti voluptatum. Eligendi,
+                ullam quis. Vero culpa libero eligendi repellendus commodi autem quae officia sequi distinctio, nemo
+                ducimus sint rem?
+            </p>
+
+
+
+        </div>
+        <div class="content-box-in">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius commodi dolores natus facilis unde non qui
+                reiciendis ad et obcaecati, aliquam repudiandae perspiciatis saepe aut dolorum excepturi debitis ex
+                quaerat?
+            </p>
+        </div>
+
+        <div class="border-box">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eius nulla magni! Necessitatibus est amet
+                quod alias sint iste rerum quisquam. Pariatur fugiat sunt delectus eos voluptas dolor quasi iste.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
