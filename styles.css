@@ -118,3 +118,10 @@ a {
   color: #0F766E;
   text-decoration: none;
 }
+
+footer {
+    background-color: rgba(182, 105, 255, 0.5);
+    text-align: center;
+    padding: 10px 0;
+    margin: 300px 0 0 0; 
+}

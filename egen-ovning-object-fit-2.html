@@ -74,41 +74,44 @@
             font-size: 1rem;
         }
 
-        .sun1 {
+        .blue1 {
             object-fit: fill;
 
         }
 
-        .sun2 {
+        .blue2 {
             object-fit: contain;
         }
 
-        .sun3 {
+        .blue3 {
             object-fit: cover;
         }
 
-        .sun4 {
+        .blue4 {
             object-fit: none;
         }
 
-        .sun5 {
+        .blue5 {
             object-fit: scale-down;
         }
 
-        .downloaded-size {
+        .blue6 {
             margin: 40px 0 0 0;
-            width: 472px;
-            height: 316px;
-            margin: 40px 0 80px 0;
+            /*width: 472px;
+            height: 316px;*/
+            margin: 40px 0 100px 0;
+
         }
 
-        .downloaded-size image {
+        .blue6 img {
             display: block;
             max-width: 100%;
             height: auto;
         }
 
-        /* Sun 6 */
+        /*.obj6 {
+            text-align: left;
+        }*/
 
         figure {
             margin: 0;
@@ -120,7 +123,15 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        /* Alternativ 2 för att placera bilden + texten i samma kolumn som sun 1-5:
+        footer {
+            background-color: rgba(182, 105, 255, 0.5);
+            text-align: center;
+            color: whitesmoke;
+            padding: 10px 0;
+            margin: 300px 0 0 0;
+        }
+
+        /* Alternativ 2 för att placera bilden + texten i samma kolumn som planet 1-5:
 
     
         .downloaded-size {
@@ -171,7 +182,6 @@
     <header>
         <nav><a href="index.html">Start</a></nav>
         <h1>Webbutveckling 1 - Övningar</h1>
-        <p>Olivia</p>
     </header>
     <main>
         <div class="container">
@@ -179,16 +189,16 @@
             <h2>Övning med "object-fit"</h2>
 
 
-            <figure class="downloaded-size">
-                <img class="sun6" src="./Pictures-own-exc/Sun-Science.gif"
+            <figure class="blue6">
+                <img class="blue6" src="./Images/Blue-planet.jpg"
                     alt="En teckning av solens inre, bild i ursprungligen nedladdad storlek">
-                <figcaption>Sun 6 - <span class="obj">Originalstorlek</span></figcaption>
+                <figcaption> <span class="obj6">Originalstorlek</span></figcaption>
             </figure>
 
             <figure class="image-frame">
 
-                <img class="sun1" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
-                <figcaption>Sun 1 - <span class="obj">object-fit: fill</span></figcaption>
+                <img class="blue1" src="./Images/Blue-planet.jpg" alt="En teckning av solens inre">
+                <figcaption><span class="obj">object-fit: fill</span></figcaption>
             </figure>
 
 
@@ -201,36 +211,38 @@
 
 
             <figure class="image-frame">
-                <img class="sun2" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
-                <figcaption>Sun 2 - <span class="obj">object-fit: contain</span></figcaption>
+                <img class="blue2" src="./Images/Blue-planet.jpg" alt="En teckning av solens inre">
+                <figcaption><span class="obj">object-fit: contain</span></figcaption>
             </figure>
 
             <figure class="image-frame">
-                <img class="sun3" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
-                <figcaption> Sun 3 - <span class="obj">object-fit: cover</span></figcaption>
+                <img class="blue3" src="./Images/Blue-planet.jpg" alt="En teckning av solens inre">
+                <figcaption> <span class="obj">object-fit: cover</span></figcaption>
             </figure>
 
             <figure class="image-frame">
-                <img class="sun4" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
-                <figcaption>Sun 4 - <span class="obj">object-fit: none;</span></figcaption>
+                <img class="blue4" src="./Images/Blue-planet.jpg" alt="En teckning av solens inre">
+                <figcaption><span class="obj">object-fit: none;</span></figcaption>
             </figure>
 
             <figure class="image-frame">
-                <img class="sun5" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
-                <figcaption>Sun 5 - <span class="obj">object-fit: scale-down;</span></figcaption>
+                <img class="blue5" src="./Images/Blue-planet.jpg" alt="En teckning av solens inre">
+                <figcaption> <span class="obj">object-fit: scale-down;</span></figcaption>
             </figure>
 
-            <!-- Sun 6 har inga mått (width & height) i CSS och bildtexten flyttas till mitten.
+            <!-- Blue planet 6 har inga mått (width & height) i CSS och bildtexten flyttas till mitten.
 
-            Föräldern till varje sun 1 till sun 5 har class .image-frame och fast bred och höjd (400x400).
-            Sun 1 till 5 har width: 100% och height: 100% av sin förälderns content. Dessa bilder tvingas in i förälderns ram via object-fit, men inte Sun 6. -->
+            Föräldern till varje Planet 1 till 5 har class .image-frame och fast bred och höjd (400x400).
+            Planet 1 till 5 har width: 100% och height: 100% av sin förälderns content. Dessa bilder tvingas in i förälderns ram via object-fit, men inte Sun 6. -->
 
-
+            <!-- Picture by Ringed Blue Planet" by Iforce is marked with CC0 1.0.-->
 
 
         </div>
 
     </main>
+    <footer>Contact: Olivia, name@mail.com
+    </footer>
 </body>
 
 
