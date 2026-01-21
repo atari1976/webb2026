@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            background-color: #7ee3de;
+            color: black;
+            text-align: center;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.2;
+            padding: 20px 0 0 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: rgb(1, 20, 53);
+        }
+
+        p {
+            color: rgb(9, 9, 0);
+        }
+
+
+
+        /*h1 {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin: 30px 0 0 0;
+        }*/
+
+        h2 {
+
+            color: whitesmoke;
+            margin: 0 0 40px 0;
+
+        }
+
+        .container {
+            margin: 40px 0 0 80px;
+        }
+
+
+        .image-frame {
+            border: 4px solid lightblue;
+            width: 400px;
+            height: 400px;
+            margin: 0 0 80px 0;
+            /*overflow: hidden;*/
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            color: lightgoldenrodyellow;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .sun1 {
+            object-fit: fill;
+
+        }
+
+        .sun2 {
+            object-fit: contain;
+        }
+
+        .sun3 {
+            object-fit: cover;
+        }
+
+        .sun4 {
+            object-fit: none;
+        }
+
+        .sun5 {
+            object-fit: scale-down;
+        }
+
+        .downloaded-size {
+            margin: 40px 0 0 0;
+            width: 472px;
+            height: 316px;
+            margin: 40px 0 80px 0;
+        }
+
+        .downloaded-size image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Sun 6 */
+
+        figure {
+            margin: 0;
+        }
+
+        .obj {
+            color: white;
+            font-size: 1, 2rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Alternativ 2 för att placera bilden + texten i samma kolumn som sun 1-5:
+
+    
+        .downloaded-size {
+            margin: 40px 0 0 0;
+            display: inline-block;
+            text-align: center;
+
+        }
+
+        .downloaded-size img {
+            display: block;
+        }*/
+
+        /*.downloaded-size figcaption {
+            text-align: center;
+        }*/
+
+
+        /*.frame {
+            border: 4px solid lightblue;
+            width: 400px;
+            height: 400px;
+            margin: 0 0 80px 0;
+
+        }
+            /*overflow: hidden;
+            Bilden fyller exakt sin föräldrars box via .frame img {width 100 %; heigt: 100%;} och ingen del av bilder sticker ut utanför förälderns ram*/
+
+
+
+        /*.frame img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }*/
+
+        /* .frame img {
+            border: 4px solid lightblue;
+            width: 400px;
+            height: 400px;
+        }*/
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav><a href="index.html">Start</a></nav>
+        <h1>Webbutveckling 1 - Övningar</h1>
+        <p>Olivia</p>
+    </header>
+    <main>
+        <div class="container">
+
+            <h2>Övning med "object-fit"</h2>
+
+
+            <figure class="downloaded-size">
+                <img class="sun6" src="./Pictures-own-exc/Sun-Science.gif"
+                    alt="En teckning av solens inre, bild i ursprungligen nedladdad storlek">
+                <figcaption>Sun 6 - <span class="obj">Originalstorlek</span></figcaption>
+            </figure>
+
+            <figure class="image-frame">
+
+                <img class="sun1" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
+                <figcaption>Sun 1 - <span class="obj">object-fit: fill</span></figcaption>
+            </figure>
+
+
+            <!-- <div class="frame">
+                
+                    <img class="sun1" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
+                    <p>Sun 1 - Kod: object-fit: fill</p>
+                    
+            </div> -->
+
+
+            <figure class="image-frame">
+                <img class="sun2" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
+                <figcaption>Sun 2 - <span class="obj">object-fit: contain</span></figcaption>
+            </figure>
+
+            <figure class="image-frame">
+                <img class="sun3" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
+                <figcaption> Sun 3 - <span class="obj">object-fit: cover</span></figcaption>
+            </figure>
+
+            <figure class="image-frame">
+                <img class="sun4" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
+                <figcaption>Sun 4 - <span class="obj">object-fit: none;</span></figcaption>
+            </figure>
+
+            <figure class="image-frame">
+                <img class="sun5" src="./Pictures-own-exc/Sun-Science.gif" alt="En teckning av solens inre">
+                <figcaption>Sun 5 - <span class="obj">object-fit: scale-down;</span></figcaption>
+            </figure>
+
+            <!-- Sun 6 har inga mått (width & height) i CSS och bildtexten flyttas till mitten.
+
+            Föräldern till varje sun 1 till sun 5 har class .image-frame och fast bred och höjd (400x400).
+            Sun 1 till 5 har width: 100% och height: 100% av sin förälderns content. Dessa bilder tvingas in i förälderns ram via object-fit, men inte Sun 6. -->
+
+
+
+
+        </div>
+
+    </main>
+</body>
+
+
+</html>
