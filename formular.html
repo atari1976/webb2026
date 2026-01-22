@@ -33,6 +33,14 @@
             margin: 10px 0 0 0;
         }
 
+        .exempel .anger {
+            color: darkgreen;
+        }
+
+        .exempel .utdata {
+            color: blueviolet;
+        }
+
         .learning-experience {
             font-family: 'Courier New', Courier, monospace;
             font-size: 1rem;
@@ -95,15 +103,20 @@
                     <fieldset>
                         <legend>Din info</legend>
                         <label>Namn:
-                            <input type="text"> name="namn"</label> <br>
+                            <input type="text" name="namn"> </label> <br>
                         <label>Ålder:
-                            <input type="number"> name="age"</label><br>
-                        <label>E-post:* <input type="mail" required> name="mail"</label><br>
+                            <input type="number" name="age"> </label><br>
+                        <label>E-post:* <input type="mail" required name="mail"> </label><br>
                         <label>Lösenord: <input type="password" name="user-password"> </label><br>
                         <label>Födelsedag:<input type="date" name="birth-day"></label><br>
                         <p>Har du läst boken?</p>
-                        <label>JA<input type="radio" name="ja"> value="yes" </label>
-                        <label>NEJ<input type="checkbox" name="nej" value="no"> </label>
+                        <p>Har du läst boken</p>
+                        <label> <input name="read" value="yes" type="radio"> JA </label>
+
+
+                        <label> <input name="read" value="no" type="checkbox"> NEJ </label>
+                        <!-- <label>JA<input type="radio" name="ja"> value="yes" </label>
+                        <label>NEJ<input type="checkbox" name="nej" value="no"> </label> -->
                         <p>Vilken/vilka genrer passar boken in i?:</p>
                         <label><input type="checkbox" name="skonlitteratur">Skönlitteratur </label>
                         <label><input type="checkbox" name="facklitteratur">Facklitteratur</label>
@@ -134,13 +147,28 @@
 
 
             <div class=" learning-experience">
-                <h3>Lärdomar från flera övningar (även andra än ovan)</h3>
+                <h3>Några lärdomar från ovanstående övningar... och från andra i läroboken</h3>
                 <ul>
-                    <li>Det ska vara samma värde på "for" och "id" (Belfrage, s. 56)</li>
+                    <li>Det ska vara samma värde på "for" och "id" (Belfrage, Webbutveckling 1, s. 56)</li>
                     <li>Placeholder - innehåller text som syns i en formulärruta. Denna försvinner när man
                         börjar
                         skriva text.</li>
                     <li>Placeholder syns inte om man i stället anger "Kommentar:" som en del av Innehåll.
+                    </li>
+                    <li class="exempel">Exempel:
+                        <div class="anger">
+                            input type="text" name="namn" value="Andrea"<br>
+                            input type="number" name="age" value="15"<br>
+                            input type="email" name="mail" value="example@mail.com"<br>
+                        </div>
+
+                        Dessa skickas som:<br>
+                        <div class="utdata">
+                            namn=Andrea<br>
+                            age=15<br>
+                            mail=example@mail.com<br>
+                        </div>
+
                     </li>
                     <li>En knapp kan hjälpa användaren att interagera med webbsidan utan att skicka in
                         datan. Med
