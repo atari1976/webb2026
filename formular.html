@@ -97,7 +97,7 @@
             <section class="ovn-7.4">
                 <h3>Övning 7.4</h3>
 
-                <h4>Betyggsätt de här recensionen (Belfrage, s. 65)</h4>
+                <h4>Betygsätt den här recensionen (Belfrage, s. 65)</h4>
 
                 <form action="https://httpbin.org/post" method="post">
                     <fieldset>
@@ -110,9 +110,8 @@
                         <label>Lösenord: <input type="password" name="user-password"> </label><br>
                         <label>Födelsedag:<input type="date" name="birth-day"></label><br>
                         <p>Har du läst boken?</p>
-                        <p>Har du läst boken</p>
-                        <label> <input name="read" value="yes" type="radio"> JA </label>
 
+                        <label> <input name="read" value="yes" type="radio"> JA </label>
 
                         <label> <input name="read" value="no" type="checkbox"> NEJ </label>
                         <!-- <label>JA<input type="radio" name="ja"> value="yes" </label>
@@ -170,6 +169,12 @@
                         </div>
 
                     </li>
+                    <li>För tillgänglighetens skull behöver label vara kopplad till input. Detta kan göras antingen
+                        genom nästling (att input placeras inuti label), eller genom att label använder attributet for
+                        med samma värde som input-elementets id. <br>
+
+
+                        När man använder "laber for" + "id"</li>
                     <li>En knapp kan hjälpa användaren att interagera med webbsidan utan att skicka in
                         datan. Med
                         andra ord kan en knapp kopplas ihop med en händelse. Till
