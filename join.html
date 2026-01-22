@@ -63,6 +63,7 @@
             color: whitesmoke;
             width: 700px;
             margin: 40px auto;
+            background-color: rgb(6, 68, 122);
         }
     </style>
 </head>
@@ -86,12 +87,51 @@
             <fieldset>
                 <legend>Frågor om astronomi</legend>
                 <label for="fav-pl">Favoritplanet</label>
-                select id="fav-pl" name="favorite-planet"></select>
-                <option value="Merkurius">Favoritplanet</option>
+                <select name="favoritplanet" id="fav-pl">
+                    <option value="Merkurius">Favoritplanet</option>
+                    <option value="merkurius">Merkurius</option>
+                    <option value="venus">Venus</option>
+                    <option value="jorden">Jorden</option>
+                    <option value="mars">Mars</option>
+                    <option value="jupiter">Jupiter</option>
+                    <option value="saturnus">Saturnus</option>
+                    <option value="uranus">Uranus</option>
+                    <option value="neptunus">Neptunus</option>
+                </select>
+
+                <br>
+                <br>
+
+                <input type="radio" name="kon" id="man" value="man">
+                <label for="man">Man</label>
+                <input type="radio" name="kon" id="kvinna" value="kvinna">
+                <label for="kvinna">Kvinna</label>
+                <input type="radio" name="kon" id="vill-ej-ange" value="vill-ej-ange">
+                <label for="vill-ej-ange">Vill ej-ange</label>
+                <br>
+                <br>
+                <p> Vilka astronomiska objekt hade du helst velat observera</p>
+
+                <input type="checkbox" name="object" id="andromeda" value="andromeda">
+                <label for="andromeda">Andromeda galaxen</label>"
+                <input type="checkbox" name="object" id="jupiter" value="jupiter">
+                <label for="jupiter">Jupiter</label>"
+                <input type="checkbox" name="object" id="orion" value="orion">
+                <label for="orion">Orion nebulosa</label>"
+                <br>
+                <br>
+                <label for="ovrig">Övrig information</label>
+                <br>
+                <textarea name="ovrig" id="ovrig" cols="50" rows="10"></textarea>
+                <br>
+                <br>
+                <button type="submit">Skicka</button>
 
 
             </fieldset>
+        </form>
     </section>
+
     <footer>
         Contact: Orionalliansen, name@mail.com
     </footer>
