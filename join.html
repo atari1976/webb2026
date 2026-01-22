@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomiska föreningen Orionalliansen - join</title>
+    <style>
+        header {
+            background-color: #7ee3de;
+            color: black;
+            padding: 16px 24px;
+            text-align: center;
+            margin: 0 0 30px 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: rgb(1, 20, 53);
+
+        }
+
+
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.2;
+            padding: 1rem;
+            color: black;
+
+        }
+
+        header p {
+            margin: 6px 0 0 15px;
+            opacity: 0.9;
+            font-size: 16px;
+
+        }
+
+        main {
+            max-width: 900px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+
+
+        h2 {
+            margin-top: 32px;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        footer {
+            background-color: rgba(182, 105, 255, 0.5);
+            text-align: center;
+            padding: 10px 0;
+            margin: 300px 0 0 0;
+            color: whitesmoke;
+        }
+
+        .form {
+            color: whitesmoke;
+            width: 700px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav><a href="index.html">Start</a></nav>
+        <h1>Webbutveckling 1 - Övningar</h1>
+    </header>
+    <h2>Gå med i astronomiska föreningen Orionalliansen</h2>
+    <section class="form">
+        <form action="https://httpbin.org/post" method="post">
+            <fieldset>
+                <legend>Personlig information</legend>
+                <label>*Förnamn: <input type="text" name="first-name"> </label> <br>
+                <label>*Efternamn:<input type="text" name="name"></label> <br>
+                <label>Ålder:<input type="number" name="age"></label><br>
+                <label>Önskat lösenord: <input type="password" name="user-password"></label><br>
+                <label>Födelsedag: <input type="date" name="birth-day"></label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Frågor om astronomi</legend>
+                <label for="fav-pl">Favoritplanet</label>
+                select id="fav-pl" name="favorite-planet"></select>
+                <option value="Merkurius">Favoritplanet</option>
+
+
+            </fieldset>
+    </section>
+    <footer>
+        Contact: Orionalliansen, name@mail.com
+    </footer>
+</body>
+
+</html>
