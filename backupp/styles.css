@@ -4,17 +4,9 @@ body {
   background-color: rgb(245, 255, 255);
 }
 
-/* header {
-    background-color: rgb(133, 236, 250);
-    max-height: 5rem;
-    color: rgb(15, 21, 101);
-    padding: 16px 24px;
-    text-align: center;
-    margin: 0 0 30px 0;
-} */
 
 .header-nav {
-  background-color: #ecf9f8;
+  background-color: #e3f7f5;
   padding: 8px 16px;
   
 }
@@ -75,5 +67,12 @@ footer p {
 footer span {
   font-size: 1rem;
   font-family: italic;
+}
+
+.link-github {
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+
 }
 
