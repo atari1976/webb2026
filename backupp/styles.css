@@ -1,0 +1,79 @@
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: rgb(245, 255, 255);
+}
+
+/* header {
+    background-color: rgb(133, 236, 250);
+    max-height: 5rem;
+    color: rgb(15, 21, 101);
+    padding: 16px 24px;
+    text-align: center;
+    margin: 0 0 30px 0;
+} */
+
+.header-nav {
+  background-color: #ecf9f8;
+  padding: 8px 16px;
+  
+}
+
+.header-nav nav{
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+  color: rgb(15, 21, 101);
+}
+
+.header-title {
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 1rem;
+  text-align: center;
+}
+
+header a{  
+    color: rgb(7, 103, 106); 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.theme, .copyright, .personal-data {color: rgb(4, 4, 107);}
+
+
+p {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1.2rem;
+}
+
+main {
+  width: 70vw;
+  padding: 0 24px;
+  background-color: rgb(230, 251, 255);
+  padding: 30px;
+  margin: 25px auto; /*ev. extra utrymme höger och vänster fördelas jämt*/
+}
+
+
+
+footer {
+    background-color: rgba(179, 236, 230, 0.5);
+    text-align: center;
+    padding: 10px 0;
+    width: 70vw;
+    margin: 32px auto; /*Jag lägger in samma marignalmått som för "main"*/
+}
+
+footer p {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+footer span {
+  font-size: 1rem;
+  font-family: italic;
+}
+
