@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Formulär</title>
+    <title>Kunskapsformulär</title>
 </head>
 
 <body>
@@ -21,20 +21,20 @@
     <main class="main-formularsidan">
         <h1 class="h1-formular">Kunskapsformulär</h1>
 
-        <section class="form">
+        <div class="form">
             <form action="https://httpbin.org/post" method="post">
                 <fieldset>
                     <legend>Personlig information</legend>
                     <label for="name">Förnamn och Efternamn:* </label>
                     <input id="name" type="text" name="name" minlength="2" maxlength="60" required> <br>
-                    <label for="epost">E-post:*</label>
+                    <label for="email">E-post:*</label>
                     <input id="email" type="email" name="epost" required><br>
                     <label for="birth-day">Födelsedatum:</label>
                     <input id="birth-day" type="date" name="birth-date"><br>
                     <label for="age">Ålder:</label>
                     <input id="age" type="number" name="age" min="0" max="120" value="1"><br>
                     <label for="password">Lösenord:</label>
-                    <input id="password" type="password" name="user-password"><br>
+                    <input id="password" type="password" name="user-password" placeholder="Ange lösenord"><br>
 
                 </fieldset>
                 <fieldset>
@@ -46,9 +46,23 @@
                         <option value="Någon gång i månaden">Någon gång i månaden</option>
                         <option value="Sällan">Sällan</option>
                         <option value="Aldrig">Aldrig</option>
-
                     </select>
-
+                    <p>Vilken nivå har du i HTML?</p>
+                    <input type="radio" id="html-ny" name="html-level" value="Nybörjare">
+                    <label for="html-ny">Nybörjare</label>
+                    <input type="radio" id="html-medel" name="html-medel" value="Medelnivå">
+                    <label for="html-medel">Medel</label>
+                    <input type="radio" id="html-avancerad" name="html-avancerad" value="Avancerad">
+                    <label for="html-avancerad">Avancerad nivå</label>
+                    <br>
+                    <br>
+                    <p>Vilken nivå har du i CSS?</p>
+                    <input type="radio" id="css-ny" name="css-level" value="Nybörjare">
+                    <label for="css-ny">Nybörjare</label>
+                    <input type="radio" id="css-medel" name="css-level" value="Medel">
+                    <label for="css-medel">Medel</label>
+                    <input type="radio" id="css-avancerad" name="css-level" value="Avancerad">
+                    <label for="css-medel">Avancerad</label>
                     <br>
                     <br>
                     <p>Känner du till GDPR?</p>
@@ -59,9 +73,8 @@
                     <br>
                     <br>
 
-
-                    <input type="checkbox" name="agreement" id="agreement" value="checked">
-                    <label for="agreement">Jag förstår och accepterar upphovsrättsliga regler.</label>
+                    <label for="agreement">Jag förstår och accepterar upphovsrättsliga regler.*</label>
+                    <input type="checkbox" name="agreement" id="agreement" value="checked" required>
                     <br>
                     <br>
                     <p>Vad vet du om internetregler?</p>
@@ -73,7 +86,7 @@
 
                 </fieldset>
             </form>
-        </section>
+        </div>
 
     </main>
     <footer>
