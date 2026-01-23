@@ -1,7 +1,10 @@
 
 body {
+  min-height: 100vh;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   background-color: rgb(245, 255, 255);
+  display: flex;
+  flex-direction: column; /*sidans huvudaxel är verikal (column)*/
 }
 
 
@@ -11,29 +14,31 @@ body {
   
 }
 
-.header-nav nav{
-  width: 70vw;
-  margin: 0 auto;
+.header-nav nav {
   display: flex;
+  justify-content: center;
+  gap: 12px;
+  
+}
+
+.header-nav a { 
   gap: 12px;
   font-weight: 600;
-  color: rgb(15, 21, 101);
+  color: rgb(15,21, 101);
+  
 }
 
 .header-title {
   font-size: 1rem;
   line-height: 1.2;
-  padding: 1rem;
+  padding: 16px;
   text-align: center;
 }
 
-header a{  
-    color: rgb(7, 103, 106); 
-    text-decoration: none;
-    font-weight: bold;
-}
 
-.theme, .copyright, .personal-data {color: rgb(4, 4, 107);}
+h1, .copyright, .personal-data {
+  color: rgb(4, 4, 107);
+}
 
 
 p {
@@ -43,36 +48,55 @@ p {
 
 main {
   width: 70vw;
+  max-width: 900px;
   padding: 0 24px;
   background-color: rgb(230, 251, 255);
   padding: 30px;
-  margin: 25px auto; /*ev. extra utrymme höger och vänster fördelas jämt*/
+  margin: 25px auto; /* tar ev. extra utrymme höger och vänster fördelas jämt*/
+  flex: 1;
 }
 
+.main-formularsidan {
+  padding-top: 12px;
+}
+
+.form {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 0 0 0;  
+}
+
+fieldset {
+  margin: 16px 0;
+  padding: 16px;
+}
+
+h1 {
+  text-align: center;
+}
 
 
 footer {
     background-color: rgba(179, 236, 230, 0.5);
     text-align: center;
     padding: 10px 0;
-    width: 70vw;
-    margin: 32px auto; /*Jag lägger in samma marignalmått som för "main"*/
+    width: 100%; /* 100 % av body, alltså hela viewportens bredd*/
+    margin: 30px auto; 
 }
 
 footer p {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 1rem;
+  line-height: 1.6;  
 }
 
 footer span {
-  font-size: 1rem;
-  font-family: italic;
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
 .link-github {
-  font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
   text-decoration: none;
-
 }
-

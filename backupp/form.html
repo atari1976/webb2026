@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulär</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <nav>
+                <a href="index.html">Startsida</a>
+                <span>I</span>
+                <a href="form.html">Kunskapsformulär</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main-formularsidan">
+        <h1 class="h1-formular">Kunskapsformulär</h1>
+
+        <section class="form">
+            <form action="https://httpbin.org/post" method="post">
+                <fieldset>
+                    <legend>Personlig information</legend>
+                    <label for="name">Förnamn och Efternamn:* </label>
+                    <input id="name" type="text" name="name" minlength="2" maxlength="60" required> <br>
+                    <label for="epost">E-post:*</label>
+                    <input id="email" type="email" name="epost" required><br>
+                    <label for="birth-day">Födelsedatum:</label>
+                    <input id="birth-day" type="date" name="birth-date"><br>
+                    <label for="age">Ålder:</label>
+                    <input id="age" type="number" name="age" min="0" max="120" value="1"><br>
+                    <label for="password">Lösenord:</label>
+                    <input id="password" type="password" name="user-password"><br>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Kunskaper om HTML, CSS och internetregler</legend>
+                    <p class="form-p">Hur ofta arbetar du med HTML/CSS?</p>
+                    <select id="form-p" name="frekvens">
+                        <option value="Varje dag">Varje dag</option>
+                        <option value="Flera dagar/vecka">Flera dagar i veckan</option>
+                        <option value="Någon gång i månaden">Någon gång i månaden</option>
+                        <option value="Sällan">Sällan</option>
+                        <option value="Aldrig">Aldrig</option>
+
+                    </select>
+
+                    <br>
+                    <br>
+                    <p>Känner du till GDPR?</p>
+                    <input type="radio" name="knowledge-GDPR" id="ja" value="ja">
+                    <label for="ja">Ja</label>
+                    <input type="radio" name="knowledge-GDPR" id="nej" value="nej">
+                    <label for="nej">Nej</label>
+                    <br>
+                    <br>
+
+
+                    <input type="checkbox" name="agreement" id="agreement" value="checked">
+                    <label for="agreement">Jag förstår och accepterar upphovsrättsliga regler.</label>
+                    <br>
+                    <br>
+                    <p>Vad vet du om internetregler?</p>
+                    <textarea id="fri-text" name="fri-text-answer" rows="8" cols="40" minlength="20"
+                        maxlength="400"></textarea>
+                    <br>
+                    <br>
+                    <button type="submit">Skicka</button>
+
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <p>Webbplats skapad av Olivia<br>
+            <a class="link-github" href="https://atari1976.github.io/webb2026/">GitHub</a><br>
+            <span>Första steg - Kul! - Mycket återstår</span>
+        </p>
+
+
+    </footer>
+</body>
+
+</html>
