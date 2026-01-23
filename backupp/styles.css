@@ -22,7 +22,6 @@ body {
 }
 
 .header-nav a { 
-  gap: 12px;
   font-weight: 600;
   color: rgb(15,21, 101);
   
