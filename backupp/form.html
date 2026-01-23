@@ -20,6 +20,9 @@
     </header>
     <main class="main-formularsidan">
         <h1 class="h1-formular">Kunskapsformulär</h1>
+        <p class="form-intro">Fyll i formuläret nedan för att beskriva hur ofta du arbetar med HTML och vilken
+            kunskapsnivå
+            du har. Du får också svara på frågor om internetregler och upphovsrätt. </p>
 
         <div class="form">
             <form action="https://httpbin.org/post" method="post">
@@ -39,47 +42,46 @@
                 </fieldset>
                 <fieldset>
                     <legend>Kunskaper om HTML, CSS och internetregler</legend>
-                    <p class="form-p">Hur ofta arbetar du med HTML/CSS?</p>
-                    <select id="form-p" name="frekvens">
+                    <label for="frekvens">Hur ofta arbetar du med HTML/CSS?</label>
+                    <select id="frekvens" name="frekvens">
                         <option value="Varje dag">Varje dag</option>
                         <option value="Flera dagar/vecka">Flera dagar i veckan</option>
                         <option value="Någon gång i månaden">Någon gång i månaden</option>
                         <option value="Sällan">Sällan</option>
                         <option value="Aldrig">Aldrig</option>
                     </select>
-                    <p>Vilken nivå har du i HTML?</p>
+                    <p class="question">Vilken nivå har du i HTML?</p>
                     <input type="radio" id="html-ny" name="html-level" value="Nybörjare">
                     <label for="html-ny">Nybörjare</label>
-                    <input type="radio" id="html-medel" name="html-medel" value="Medelnivå">
+                    <input type="radio" id="html-medel" name="html-level" value="Medelnivå">
                     <label for="html-medel">Medel</label>
-                    <input type="radio" id="html-avancerad" name="html-avancerad" value="Avancerad">
+                    <input type="radio" id="html-avancerad" name="html-level" value="Avancerad">
                     <label for="html-avancerad">Avancerad nivå</label>
                     <br>
-                    <br>
-                    <p>Vilken nivå har du i CSS?</p>
+                    <p class="question">Vilken nivå har du i CSS?</p>
                     <input type="radio" id="css-ny" name="css-level" value="Nybörjare">
                     <label for="css-ny">Nybörjare</label>
                     <input type="radio" id="css-medel" name="css-level" value="Medel">
                     <label for="css-medel">Medel</label>
                     <input type="radio" id="css-avancerad" name="css-level" value="Avancerad">
-                    <label for="css-medel">Avancerad</label>
+                    <label for="css-avancerad">Avancerad</label>
                     <br>
                     <br>
-                    <p>Känner du till GDPR?</p>
+                    <p class="question">Känner du till GDPR?</p>
                     <input type="radio" name="knowledge-GDPR" id="ja" value="ja">
                     <label for="ja">Ja</label>
                     <input type="radio" name="knowledge-GDPR" id="nej" value="nej">
                     <label for="nej">Nej</label>
                     <br>
                     <br>
-
-                    <label for="agreement">Jag förstår och accepterar upphovsrättsliga regler.*</label>
-                    <input type="checkbox" name="agreement" id="agreement" value="checked" required>
+                    <label for="fri-text"> Vad vet du om internetregler?</label>
                     <br>
-                    <br>
-                    <p>Vad vet du om internetregler?</p>
                     <textarea id="fri-text" name="fri-text-answer" rows="8" cols="40" minlength="20"
                         maxlength="400"></textarea>
+                    <br>
+                    <br>
+                    <label for="agreement">Jag förstår och accepterar upphovsrättsliga regler.*</label>
+                    <input type="checkbox" name="agreement" id="agreement" value="checked" required>
                     <br>
                     <br>
                     <button type="submit">Skicka</button>

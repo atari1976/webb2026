@@ -33,6 +33,7 @@ body {
   line-height: 1.2;
   padding: 16px;
   text-align: center;
+  margin: 25px auto 0;
 }
 
 
@@ -46,6 +47,10 @@ p {
     font-size: 1.2rem;
 }
 
+.question {
+  font-size: 1rem;  
+}
+
 main {
   width: 70vw;
   max-width: 900px;
@@ -57,7 +62,7 @@ main {
 }
 
 .main-formularsidan {
-  padding-top: 12px;
+  padding-top: 20px;
 }
 
 .form {
@@ -65,6 +70,14 @@ main {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px 0 0 0;  
+}
+
+.form-intro {
+  margin: 30px auto 0;
+  /*vid max-bred på 700px och vänster&höger marginal fördelar webbläsaren det lediga utrymmet lika mycket vänster&höger sida*/
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
 }
 
 fieldset {
@@ -75,7 +88,6 @@ fieldset {
 h1 {
   text-align: center;
 }
-
 
 footer {
     background-color: rgba(179, 236, 230, 0.5);
