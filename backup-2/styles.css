@@ -6,10 +6,18 @@ body {
 }
 
 .container {
-  width: min(1000px, 100% - 2rem); 
+  width: min(1100px, 100% - 2rem); 
   margin: 0 auto;
   padding: 1.25rem;
 }
+/*För index.html*/
+
+.container-wide {
+  width: min(1400px,100% - 2rem);
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+/*För etik.html, så att bilderna kan bredda ut sig och avstånd till marginalen minska*/
 
 h1 {
     margin: 1.25rem 0;
@@ -21,16 +29,13 @@ h2 {
 
 /* Krav för C: Lägg in margin-top på rubrikerna */
 
-h1, h2 {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+h1, h2, h3 {
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  /*font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;*/
     text-align: center;
 }
+/* Krav för C: Använd Modern Font Stacks */
 
-p {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: normal;
-}
 
 /*.column h2 {
     text-align: center;
@@ -44,8 +49,8 @@ p {
 nav {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;    
+    gap: 0.75rem; /* ca.12px */
+    margin-bottom: 1.5rem;    
 }
 
 
@@ -76,13 +81,6 @@ nav a:active {
 /* Krav för C: Lägg till marginaler och padding för bättre layout */
 
 
-
-/* Krav för C: Använd Modern Font Stacks */
-
-/* Krav för C: Endast p-elementen ska ha font-size: 0.9rem */
-
-/* Krav för A: Skapa ett bildgalleri med grid */
-
 .two-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -91,16 +89,28 @@ nav a:active {
 }
 
 /*Gallery start*/
+
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows: 200px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 300px;
     gap: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
+/* Krav för A: Skapa ett bildgalleri med grid */
+
+/*.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 10px;
+}*/
+
 .gallery-item {
-    width: 100%;
+    width: 95%;
+    height: 95%;
 }
 
 .gallery-item img {
@@ -121,6 +131,11 @@ footer {
 }
 /* Krav för C: Centrera texten i footern och rubrikerna */
 
+p {
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: normal;
+} /* Krav för C: Endast p-elementen ska ha font-size: 0.9rem */
 
 /*
 
