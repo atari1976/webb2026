@@ -3,6 +3,7 @@ body {
   color: #1c2124;
   font-size: 1.2rem;
   line-height: 1.5;
+  margin: 0;
 }
 
 .container {
@@ -18,6 +19,8 @@ body {
   padding: 1.25rem;
 }
 /*För etik.html, så att bilderna kan bredda ut sig och avstånd till marginalen minska*/
+
+
 
 h1 {
     margin: 1.25rem 0;
@@ -62,7 +65,7 @@ nav a {
   text-decoration: none;
   color: black;
   font-size: 1.2rem;
-  background-color: #afeda7;
+  background-color: #a7eced;
   border-radius: 9px;
   
 }
@@ -91,33 +94,46 @@ nav a:active {
 /*Gallery start*/
 
 
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-auto-rows: 300px;
-    gap: 10px;
+    gap: 15px;
     padding: 5px;
 }
 
-/* Krav för A: Skapa ett bildgalleri med grid */
-
-/*.gallery {
+/*2: .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 200px;
+  grid-auto-rows: 300px;
   gap: 10px;
-}*/
+}. Om man vill alltid ha 3 kolumner/bilder på sidan. Dock inte så bra för mindre skärmar*/
+
+/* Krav för A: Skapa ett bildgalleri med grid */
+
 
 .gallery-item {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
+    object-fit: cover;  
+    display: block; 
+     
+} 
+
+
+
+/*.gallery-item.eight img{
+  object-position: 90% 50%;
+}*/
+
 /*Gallery end*/
 /* Använd grid-template-columns, repeat(), auto-fit, minmax(), grid-auto-rows och gap */
 /* Använd width och height på lämpliga platser */
@@ -130,6 +146,11 @@ footer {
     /* 10px/16=0.625 rem*/
 }
 /* Krav för C: Centrera texten i footern och rubrikerna */
+
+footer p {
+  color: rgb(6, 11, 67);
+}
+
 
 p {
   font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
