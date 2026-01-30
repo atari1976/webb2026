@@ -30,9 +30,13 @@ h2 {
     margin: 1.875rem 0;
 }
 
+h3, h4 {
+  margin: 1.25rem 0;
+}
+
 /* Krav för C: Lägg in margin-top på rubrikerna */
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
   /*font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;*/
     text-align: center;
@@ -63,21 +67,20 @@ nav {
 nav a {
   padding: 10px 12px;
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 1.2rem;
-  background-color: #a7eced;
-  border-radius: 9px;
-  
+  background-color: rgb(189, 164, 227);
+  border-radius: 9px;  
 }
 
 nav a:hover {
-  background-color: #f6c995;
-  color: black;
+  background-color: rgb(246, 201,149);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 nav a:active {
-  background-color: #536974;
-  background-color: #f77c36;
+  background-color: rgb(247, 124, 54);
 }
 /*Menu links end */
 
@@ -116,16 +119,14 @@ nav a:active {
 .gallery-item {
     width: 100%;
     height: 100%;
-    margin: 0;
-    
+    margin: 0;    
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;  
-    display: block; 
-     
+    display: block;      
 } 
 
 
@@ -151,19 +152,53 @@ footer p {
   color: rgb(6, 11, 67);
 }
 
+.column :is(ul,ol) {
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.25rem;
+
+} 
+
+.GDPR-rules li {
+  margin-bottom: 0.70rem;
+}
+
+.GDPR-rules li > span{
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
 
 p {
   font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   font-size: 0.9rem;
-  font-weight: normal;
+  font-weight: 400;
 } /* Krav för C: Endast p-elementen ska ha font-size: 0.9rem */
 
-/*
 
-img {
-  display: inline;
-  width: 20vw;
+.listan-ip-details {
+  font-size: 1rem;
+  line-height: 1.45;
+  color:rgb(79, 79, 80);
+}
+
+a {
+  text-decoration:none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: darkblue;  
+}
+
+a:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+a:focus{
+  outline: 2px solid orange;
 }
 
 
-*/
