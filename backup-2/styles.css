@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+main {
+  padding: 10px;
+}
+
 .container {
   width: min(1100px, 100% - 2rem); 
   margin: 0 auto;
@@ -85,7 +89,10 @@ nav a:active {
 
 /* Krav för C: Lägg till marginaler och padding för bättre layout */
 
-
+.text-etik {
+  max-width: 60ch;
+  margin: 0 auto 3rem;
+}
 .two-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
