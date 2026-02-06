@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturelorem Hotel Resort</title>
+    <meta name="description" content="Welcome to Naturelorem Resort.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="hero">
+            <a class="hero-logo" href="index.html"></a>
+            <img class="hero-logo" src="./bilder/Naturelorem-300-273.webp" alt="Naturelorem logo">
+            <img class="hero-image" src="./bilder/Hero-1920-800.webp" alt="Resort in green enviroment">
+        </div>
+
+        <nav class="nav">
+
+            <ul>
+                <li>
+                    <a class="nav-link" href="index.html">Welcome</a>
+                </li>
+                <li><a class="nav-link" href="book.html">Book</a></li>
+                <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1> Welcome to Naturelorem Hotel Resort!</h1>
+
+        <section class="cards">
+            <!-- Kort 1-->
+            <article class="card">
+                <h2>About Naturelorem</h2>
+
+                <img class="img-two-people" src="./bilder/bild19.webp"
+                    alt="Resort enviroment. Two people under wooden roof.">
+
+                <div class="text-about">
+                    <p> Naturelorem is a tranquil boutique resort set in lush jungle surroundings. With a limited number
+                        of
+                        suites and villas, the experience is intimate, calm and personal.
+                    </p>
+                    <p>Natural materials, handcrafted details and thougtful design create a plane for relaxation,
+                        romance
+                        and
+                        connection with nature.
+                    </p>
+                </div>
+            </article>
+
+
+            <!-- Kort 2-->
+            <article class="card">
+                <h2>Explore Naturelorem</h2>
+
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number -->
+
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="./bilder/bild17.webp">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="./bilder/food.webp">
+
+                    </div>
+
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="./bilder/bild4.webp">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="./bilder/bild14.webp">
+                    </div>
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+
+
+                <p class="text-invite-gallery">Visit <a href="./gallery">gallery</a> for more views!
+                </p>
+
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="adress">Naturelorem Hotel Resor <span>I</span> Banjar Bresela <span>I</span> Ubud - Bali
+            <span>I</span> Indonesia
+        </p>
+        <p class="disclaimer"> Images are used for educational purposes only. <br>All image rights belong to their
+            repsective
+            owners.</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>

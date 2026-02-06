@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #F5F5F5;
+ /* margin: 0;*/
+
+}
+
+.nav {
+  background: #d7d3c8;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: 4rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a:hover {
+  color: rgba(222 96 0 94%);;
+}
+
+
+nav a:visited {
+  color: rgb(7, 74, 31);
+  /*color: #9b5d1b;*/
+}
+
+/*.hero {
+    display: grid;
+}*/
+
+.hero {
+  position: relative;
+}
+
+/* Positionering: elementet positioneras i förh. till sin urspr. position i flödet. När man anv. top, right, bottom eller left justeras elementet från dess ursprunglia plats, men påverkar fortfarande andra elements layout*/
+
+.hero-image {
+  width: 100%;
+  height: clamp(220px, 30vw, 360px);
+  object-fit: cover;
+  display: block;
+}
+
+.hero-logo {
+  position: absolute;
+  top: clamp(3rem, 6vw, 9rem);
+  left: clamp(1.5rem, 5vw, 3.5rem);
+  /*top: 4.5rem;
+  left: 3rem;*/
+  width: clamp(100px, 14vw, 180px);
+  z-index: 2;
+  
+}
+
+.main {
+  max-width: 1200px; 
+  margin: 1.2rem auto;
+  padding: 2rem;
+  background-color: #F5F5F5;
+}
+h1, h2, h3{
+  text-align: center;
+  
+}
+
+h1 {
+    margin: 1.25rem 0;
+}
+
+h2 {
+    margin: 1.875rem 0;
+}
+
+h3, h4 {
+  margin: 1.25rem 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3.5rem;
+  margin: 3rem auto;
+   
+}
+
+.cards img{
+  width: 100%;
+  height: auto;
+  display: block;
+
+}
+.card {
+   background-color: #D8D3C740;
+   border-radius: 20px;
+   margin: 1rem;
+   padding: 1rem;
+
+}
+
+
+.img-two-people {
+  width: 250px;
+  max-width: 450px;
+}
+
+.text-invite-gallery {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.text-invite-gallery a {
+  color: #2F6F5E;
+  text-decoration: none;
+}
+
+.text-invite-gallery a:hover {
+  color: rgba(222 96 0 94%);
+}
+
+
+.text-about {
+  max-width: 50ch;
+  padding: 1rem;
+  margin: 2rem auto;
+}
+
+footer {
+  text-align: center;
+  margin: 2.5rem 0; 
+  padding: 1rem;
+  background-color: #D8D3C7;
+}
+
+.adress{
+  font-weight: 600; 
+  margin: 0.5rem;
+}
+
+.adress span{
+  font-weight: 400;
+}
+
+.disclaimer {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.8rem;
+  
+}
+
+/** Slideshow **/
+
+
+/* Slideshow */
+
+
+.slideshow-container{
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  position: relative;
+}
+
+/*.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}*/
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/**End Slideshow container**/
+
