@@ -110,7 +110,7 @@ h3, h4 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 3.5rem;
   margin: 3rem auto;
    
@@ -125,15 +125,23 @@ h3, h4 {
 .card {
    background-color: #D8D3C740;
    border-radius: 20px;
-   margin: 1rem;
+   margin: 0;
    padding: 1rem;
 
 }
 
+.card > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-.img-two-people {
-  width: 250px;
-  max-width: 450px;
+/*bara direkta barn till .card påverkas, inte alla bilder*/
+
+.card .img-two-people {
+  width: min(450px, 100%);
+  display: bock;
+  margin: 0 auto;
 }
 
 .text-invite-gallery {
