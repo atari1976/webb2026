@@ -16,8 +16,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   background-color: #F5F5F5;
- /* margin: 0;*/
-
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
 }
 
 .nav {
@@ -98,10 +97,12 @@ h1, h2, h3{
 
 h1 {
     margin: 1.25rem 0;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
 }
 
 h2 {
     margin: 1.875rem 0;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 
 h3, h4 {
@@ -140,7 +141,7 @@ h3, h4 {
 
 .card .img-two-people {
   width: min(450px, 100%);
-  display: bock;
+  display: block;
   margin: 0 auto;
 }
 
@@ -168,7 +169,7 @@ h3, h4 {
 
 footer {
   text-align: center;
-  margin: 2.5rem 0; 
+  margin: 2.5 auto 0; 
   padding: 1rem;
   background-color: #D8D3C7;
 }
