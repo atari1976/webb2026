@@ -19,23 +19,23 @@ body {
   font-size: clamp(0.95rem, 2.5vw, 1rem);
 }
 
-.nav {
+.main-nav {
   background: #d7d3c8;
   display: flex;
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
 }
 
 .nav-link {
   text-decoration: none;
   color: #111;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
 }
 
-nav ul {
+.main-nav ul {
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -46,15 +46,6 @@ nav ul {
   padding: 0;
 }
 
-nav a:hover {
-  color: rgba(222 96 0 94%);;
-}
-
-
-nav a:visited {
-  color: rgb(7, 74, 31);
-  /*color: #9b5d1b;*/
-}
 
 /*.hero {
     display: grid;
@@ -62,6 +53,8 @@ nav a:visited {
 
 .hero {
   position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 /* Positionering: elementet positioneras i förh. till sin urspr. position i flödet. När man anv. top, right, bottom eller left justeras elementet från dess ursprunglia plats, men påverkar fortfarande andra elements layout*/
@@ -70,19 +63,29 @@ nav a:visited {
   width: 100%;
   height: clamp(220px, 30vw, 360px);
   object-fit: cover;
+  /*object-position: top center;*/
+  object-position: center 20%;
   display: block;
 }
 
 .hero-logo {
-  position: absolute;
-  top: clamp(3rem, 6vw, 9rem);
-  left: clamp(1.5rem, 5vw, 3.5rem);
+  display: block;
+  /*top: clamp(2.5rem, 2.5vw, 8rem);
+  left: clamp(1.5rem, 3vw, 3.5rem);*/
   /*top: 4.5rem;
   left: 3rem;*/
+  width: clamp(100px, 14vw, 180px);  
+}
+
+.hero-logo-link {
+  position: absolute;
+  display: block;
+  top: clamp(3rem, 6.6vw, 9rem);
+  left: clamp(1.5rem, 5vw, 3.5rem);
   width: clamp(100px, 14vw, 180px);
   z-index: 2;
-  
 }
+
 
 .main {
   max-width: 1200px; 
@@ -97,7 +100,7 @@ h1, h2, h3{
 
 h1 {
     margin: 1.25rem 0;
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
 }
 
 h2 {
@@ -108,6 +111,7 @@ h2 {
 h3, h4 {
   margin: 1.25rem 0;
 }
+
 
 .cards {
   display: grid;
@@ -121,8 +125,15 @@ h3, h4 {
   width: 100%;
   height: auto;
   display: block;
-
 }
+
+@media (max-width: 500px) {
+  .main {padding: 1rem;}
+  .cards {grid-template-columns: 1fr;
+          gap: 2rem;}
+  .nav-link {font-size: 1.1rem;}
+}
+
 .card {
    background-color: #D8D3C740;
    border-radius: 20px;
@@ -145,19 +156,15 @@ h3, h4 {
   margin: 0 auto;
 }
 
-.text-invite-gallery {
+.text-invite-to-gallery {
   font-size: 1.2rem;
   text-align: center;
   margin: 4rem auto;
 }
 
-.text-invite-gallery a {
+.text-invite-to-gallery a {
   color: #2F6F5E;
   text-decoration: none;
-}
-
-.text-invite-gallery a:hover {
-  color: rgba(222 96 0 94%);
 }
 
 
@@ -169,7 +176,7 @@ h3, h4 {
 
 footer {
   text-align: center;
-  margin: 2.5 auto 0; 
+  margin: 2.5rem auto 0; 
   padding: 1rem;
   background-color: #D8D3C7;
 }
@@ -190,10 +197,36 @@ footer {
   
 }
 
+
+.main-nav a:hover, .text-invite-to-gallery a:hover {
+  color: rgba(180, 95, 40, 0.95);
+}
+
+a:focus-visible {
+     outline: 2px solid rgba(180, 95, 40, 0.95);
+     outline-offset: 0.25rem;
+}
+
+
+/*.nav-link:hover {
+ color:rgba(180, 95, 40, 0.95);
+}*/
+
+
+/*a:hover {
+  color: rgba(180, 95, 40, 0.95);
+}
+
+
+a:visited {
+  color: rgba(120, 80, 50, 0.9);
+  
+}*/
+
+
+
+
 /** Slideshow **/
-
-
-/* Slideshow */
 
 
 .slideshow-container{
@@ -288,5 +321,5 @@ footer {
   to {opacity: 1}
 }
 
-/**End Slideshow container**/
+/**End Slideshow**/
 
