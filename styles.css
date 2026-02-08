@@ -358,7 +358,7 @@ footer {
 }
 
 .map-embed iframe{
-    height: 320px;
+    height: 420px;
     width: 100%;
     height: clamp(280px, 35vw, 420px);
     border: 0;
@@ -366,8 +366,8 @@ footer {
     display: block;
   } 
 
-
 /** End Book.html **/
+
 
 /* Mobile */
 @media (max-width: 900px){
