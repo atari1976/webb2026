@@ -345,12 +345,11 @@ footer {
   background-color: #25594c;
 }
 
-
-
 /** End contact.html **/
 
-/** Start Book.html **/
 
+
+/** Start Book.html **/
 
 /*left card*/
 .map-note{
@@ -394,20 +393,6 @@ a:focus-visible {
 }
 
 
-/*.nav-link:hover {
- color:rgba(180, 95, 40, 0.95);
-}*/
-
-
-/*a:hover {
-  color: rgba(180, 95, 40, 0.95);
-}
-
-
-a:visited {
-  color: rgba(120, 80, 50, 0.9);
-  
-}*/
 
 /** Start Gallery **/
 
@@ -467,6 +452,11 @@ a:visited {
 /* Hide the images by default */
 .mySlides {
   display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mySlides img {
+  border-radius: 10px; 
 }
 
 /* Next & previous buttons */
