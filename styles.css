@@ -198,9 +198,11 @@ footer {
   font-size: 0.8rem;
   
 }
+
+
 /** Start contact.html **/
 
-.contact-grid{
+.two-column-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 2rem;
@@ -238,12 +240,6 @@ footer {
   max-height: 520px;
   object-fit: cover;
 }*/
-
-
-
-
-
-
 
 /* Form */
 .contact-form{
@@ -320,13 +316,37 @@ footer {
   background-color: #25594c;
 }
 
+
+
+/** End contact.html **/
+
+/** Start Book.html **/
+
+
+/*left card*/
+.map-note{
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  color:#2F6F5E;
+}
+
+.map-embed iframe{
+    height: 320px;
+    width: 100%;
+    height: clamp(280px, 35vw, 420px);
+    border: 0;
+    border-radius: 14px;
+    display: block;
+  } 
+
+
+/** End Book.html **/
+
 /* Mobile */
 @media (max-width: 900px){
-  .contact-grid{
+  .two-column-grid{
     grid-template-columns: 1fr;
-  }
-
-  
+  }  
 
   .btn{
     width: 100%;
@@ -334,30 +354,6 @@ footer {
     text-align: center;
   }
 }
-
-/** End contact.html **/
-
-/** Start Book.html **/
-
-.map-note{
-  margin-top: 0.9rem;
-  font-size: 0.95rem;
-}
-
-.contact-map iframe{
-    height: 320px;
-  }
-
-.ZZZZZ iframe{
-  width: 100%;
-  height: 420px;
-  border: 0;
-  border-radius: 14px;
-  display: block;
-}
-
-
-
 
 .main-nav a:hover, .text-invite-to-gallery a:hover {
   color: rgba(180, 95, 40, 0.95);
@@ -387,7 +383,7 @@ a:visited {
 
 
 
-/** Slideshow **/
+/** Slideshow. Source W3Schools**/
 
 
 .slideshow-container{

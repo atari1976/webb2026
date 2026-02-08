@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naturelorem Hotel Resort</title>
+    <meta name="description" content="Book your stay at Naturelorem Resort." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="hero">
+            <a class="hero-logo-link" href="index.html" aria-label="Go to homepage">
+                <img class="hero-logo" src="./bilder/Naturelorem-300-273.webp" alt="Naturelorem logo" />
+            </a>
+
+            <img class="hero-image" src="./bilder/hero-2560-1067.webp" alt="Resort in green jungle environment" />
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a class="nav-link" href="index.html">Welcome</a></li>
+                <li><a class="nav-link" href="book.html">Book</a></li>
+                <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1>Book</h1>
+
+        <section class="two-column-grid" aria-label="Booking and location">
+
+            <!-- Left card: map -->
+
+            <div class="left-card map-embed">
+                <h2 class="visually-hidden">Find us</h2>
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15783.698022460472!2d115.25927524685497!3d-8.506711314562457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d684fdc27d9%3A0x8e719708e5f8da03!2sKutuh%20Kelod%2C%20Desa%20Petulu%2C%20Kelurahan%20Ubud%2C%20Kelurahan%20Gianyar%2C%20Bali%2C%20Indonesien!5e0!3m2!1ssv!2sse!4v1770503767145!5m2!1ssv!2sse"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+                <p class="map-note">
+                    Naturelorem Hotel Resort · Kutuh Kelod · Ubud, Bali
+                </p>
+            </div>
+
+            <!-- Right card: booking form -->
+
+            <div class="right-card">
+                <h2>Booking request</h2>
+
+                <form class="contact-form" action="https://httpbin.org/post" method="post">
+                    <p class="text-contact">
+                        Send us a booking request and we will get back to you shortly.
+                    </p>
+
+                    <div class="field">
+                        <label for="book-name">Name <span class="required-star" aria-hidden="true">*</span></label>
+                        <input id="book-name" name="name" type="text" required />
+                    </div>
+
+                    <div class="field">
+                        <label for="book-email">Email <span class="required-star" aria-hidden="true">*</span></label>
+                        <input id="book-email" name="email" type="email" required />
+                    </div>
+
+                    <div class="field">
+                        <label for="book-phone">Phone number</label>
+                        <input id="book-phone" name="phone" type="tel" autocomplete="tel" />
+                    </div>
+
+                    <div class="field">
+                        <label for="arrival">Arrival date <span class="required-star"
+                                aria-hidden="true">*</span></label>
+                        <input id="arrival" name="arrival" type="date" required />
+                    </div>
+
+                    <div class="field">
+                        <label for="departure">Departure date <span class="required-star"
+                                aria-hidden="true">*</span></label>
+                        <input id="departure" name="departure" type="date" required />
+                    </div>
+
+                    <div class="consent-box">
+                        <input id="book-consent" name="consent" type="checkbox" required />
+                        <label for="book-consent">
+                            <span class="required-star" aria-hidden="true">*</span>
+                            By submitting this form, you consent to us storing and processing your information for
+                            booking purposes only.
+                        </label>
+                    </div>
+
+                    <button class="btn" type="submit">Send</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="adress">
+            Naturelorem Hotel Resort <span>I</span> Kutuh Kelod <span>I</span> Ubud - Bali <span>I</span> Indonesia
+        </p>
+        <p class="disclaimer">
+            Images are used for educational purposes only. <br />
+            All image rights belong to their respective owners.
+        </p>
+    </footer>
+</body>
+
+</html>
