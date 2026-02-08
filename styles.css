@@ -216,12 +216,29 @@ footer {
   padding: 1.5rem;
 }
 
+.right-card-contact-page {
+  display: grid;
+  place-items: center; 
+  background-color: rgba(216, 211, 199, 0.25);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+/*.right-card-overlay{
+  position: relative;
+  display: grid;
+  place-items: end;
+  background-color: 0;
+  
+}*/
+
 .contact-image{
   width: 100%;
   height: clamp(360px, 45vw, 560px);
   object-fit: cover;
   border-radius: 14px;
   display: block;
+  
   
 }
 
@@ -480,3 +497,14 @@ a:visited {
 
 /**End Slideshow**/
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
