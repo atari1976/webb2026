@@ -289,6 +289,11 @@ footer {
   background-color: #fff;
 }
 
+.contact-form .field input{
+  max-width: 480px;
+}
+
+
 .field textarea{
   resize: vertical; /* Användaren får bara ändra höjden, inte bredden*/
   min-height: 140px;
@@ -507,4 +512,11 @@ a:visited {
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+.under-construction {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  max-width: 60ch;
+  
 }
