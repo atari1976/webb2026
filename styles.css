@@ -202,7 +202,7 @@ footer {
 
 .contact-grid{
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 2rem;
   margin: 2.5rem auto;
 }
@@ -260,7 +260,7 @@ footer {
 }
 
 .field textarea{
-  resize: vertical;
+  resize: vertical; /* Användaren får bara ändra höjden, inte bredden*/
   min-height: 140px;
 }
 
