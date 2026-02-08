@@ -70,7 +70,8 @@ body {
 
 .hero-logo {
   display: block;
-  width: clamp(100px, 14vw, 180px);  
+  width: clamp(100px, 14vw, 180px); 
+  height: auto; 
   /*top: clamp(2.5rem, 2.5vw, 8rem);
   left: clamp(1.5rem, 3vw, 3.5rem);*/
   /*top: 4.5rem;
@@ -82,7 +83,6 @@ body {
   display: block;
   top: clamp(3rem, 6.6vw, 9rem);
   left: clamp(1.5rem, 5vw, 3.5rem);
-  width: clamp(100px, 14vw, 180px);
   z-index: 2;
 }
 
