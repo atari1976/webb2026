@@ -94,8 +94,7 @@ body {
   background-color: #F5F5F5;
 }
 h1, h2, h3{
-  text-align: center;
-  
+  text-align: center;  
 }
 
 h1 {
@@ -156,6 +155,7 @@ h3, h4 {
   width: min(450px, 100%);
   display: block;
   margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .text-invite-to-gallery {
@@ -238,7 +238,7 @@ footer {
   object-fit: cover;
   border-radius: 14px;
   display: block;
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   
 }
 
@@ -289,9 +289,14 @@ footer {
   background-color: #fff;
 }
 
-.contact-form .field input{
-  max-width: 480px;
+.contact-form .field input,
+.contact-form, .field textarea {
+  max-width: 520px;
 }
+
+/*.contact-form .field input{
+  max-width: 480px;
+}*/
 
 
 .field textarea{
@@ -401,6 +406,40 @@ a:visited {
   color: rgba(120, 80, 50, 0.9);
   
 }*/
+
+/** Start Gallery **/
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+    grid-auto-rows: 400px;
+    gap: 25px;
+    padding: 5px;
+    margin: 30px auto;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    margin: 0;    
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    border-radius: 8px;
+    display: block;  
+    
+}
+
+.gallery-item {
+    background-color: #fff; 
+    padding: 12px; 
+    border-radius: 14px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 
 
