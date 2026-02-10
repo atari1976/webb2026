@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturelorem Hotel Resort</title>
+    <meta name="description"
+        content="Contact Naturelorem Hotel Resort for questions about your stay, booking inquiries or general information. We are happy to help you plan your visit">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="hero">
+            <a class="hero-logo-link" href="index.html" aria-label="Go to homepage">
+                <img class="hero-logo" src="./img/Naturelorem-300-273.webp" alt="Naturelorem logo" width="300"
+                    height="273">
+            </a>
+
+            <img class="hero-image" src="./img/hero-1920-664.webp"
+                alt="Tropical resort surrounded by lush green nature with terraces and pools">
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a class="nav-link" href="index.html">Welcome</a>
+                </li>
+                <li><a class="nav-link" href="book.html">Book</a></li>
+                <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <h1>Contact</h1>
+
+        <section class="two-column-grid" aria-label="Contact and location">
+
+
+            <div class="left-card">
+                <h2>Contact form</h2>
+
+                <form class="contact-form" action="https://httpbin.org/post" method="post">
+                    <p class="text-contact">
+                        If you have any questions about your stay, feel free to contact us. We'll be happy to help.
+                    </p>
+
+                    <div class="field">
+                        <label for="name">Name <span class="required-star" aria-hidden="true">*</span></label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email <span class="required-star" aria-hidden="true">*</span></label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="comments">Comments</label>
+                        <textarea id="comments" name="comments" rows="6" maxlength="500"></textarea>
+                    </div>
+
+                    <div class="consent-box">
+                        <input id="consent" name="consent" type="checkbox" required>
+                        <label for="consent">
+                            <span class="required-star" aria-hidden="true">*</span>
+                            <span class="consent-text">By submitting this form, you consent to us storing and processing
+                                your information for
+                                booking purposes only.</span>
+                        </label>
+                    </div>
+
+                    <button class="btn" type="submit">Send</button>
+                </form>
+            </div>
+
+            <div class="right-card-contact-page">
+
+                <h2 class="visually-hidden">Resort environment</h2>
+
+                <!-- Temp solution för image positioning, since 2 base "right-cards" use samma class & styling in contact.html & book.html -->
+                <div class="right-card-overlay">
+                    <img class="contact-image" src="./img/bild-30.webp" alt="Infinity pool with jungle view">
+                </div>
+
+            </div>
+
+
+
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <p class="adress">Naturelorem Hotel Resort <span>I</span> Kutuh Kelod <span>I</span> Ubud - Bali
+            <span>I</span> Indonesia
+        </p>
+        <p class="disclaimer"> Images are used for educational purposes only. <br>All image rights belong to their
+            respective
+            owners.</p>
+    </footer>
+</body>
+
+</html>

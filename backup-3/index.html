@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturelorem Hotel Resort</title>
+    <meta name="description"
+        content="Naturelorem Hotel Resort is a tranquil boutique resort in Ubud, Bali, offering nature-inspired design, relaxation and a calm, personal stay experience.">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="hero">
+            <a class="hero-logo-link" href="index.html" aria-label="Go to homepage">
+                <img class="hero-logo" src="./img/Naturelorem-300-273.webp" alt="Naturelorem logo" width="300"
+                    height="273">
+            </a>
+
+            <img class="hero-image" src="./img/hero-1920-664.webp"
+                alt="Tropical resort surrounded by lush green nature with terraces and pools">
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a class="nav-link" href="index.html">Welcome</a>
+                </li>
+                <li><a class="nav-link" href="book.html">Book</a></li>
+                <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1> Welcome to Naturelorem Hotel Resort!</h1>
+
+        <div class="cards">
+            <!-- Kort 1-->
+            <article class="card">
+                <h2>About Naturelorem</h2>
+
+                <img class="img-two-people" src="./img/bild19.webp"
+                    alt="Resort environment. Two people under wooden roof." loading="lazy">
+
+                <div class="text-about">
+                    <p> Naturelorem is a tranquil boutique resort set in lush jungle surroundings. With a limited number
+                        of
+                        suites and villas, the experience is intimate, calm and personal.
+                    </p>
+                    <br>
+                    <p>Natural materials, handcrafted details and thougtful design create a plane for relaxation,
+                        romance
+                        and
+                        connection with nature.
+                    </p>
+                </div>
+            </article>
+
+
+            <!-- Kort 2-->
+            <article class="card">
+                <h2>Explore Naturelorem</h2>
+
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number -->
+
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 5</div>
+                        <img src="./img/bild17.webp"
+                            alt="Curved infinity pool with turquoise water overlooking lush jungle and terraces">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 5</div>
+                        <img src="./img/bild3.webp" alt="Infinity pool at the resort overlooking hills at sunset"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 5</div>
+                        <img src="./img/food.webp"
+                            alt="Outdoor meal with wraps, dips and bread served at the resort restaurant"
+                            loading="lazy">
+
+                    </div>
+
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 5</div>
+                        <img src="./img/bild4.webp"
+                            alt="Poolside lounge chairs with view over tropical jungle and terraces" loading="lazy">
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 5</div>
+                        <img src="./img/bild14.webp" alt="Open-air lobby with seating area and traditional architecture"
+                            loading="lazy">
+                    </div>
+                    <a class="prev" role="button" tabindex="0" aria-label="Previous slide"
+                        onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" role="button" tabindex="0" aria-label="Next slide"
+                        onclick="plusSlides(1)">&#10095;</a>
+
+                    <!-- Next and previous buttons -->
+                    <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" role="button" tabindex="0" aria-label="Go to slide 1"
+                        onclick="currentSlide(1)"></span>
+                    <span class="dot" role="button" tabindex="0" aria-label="Go to slide 2"
+                        onclick="currentSlide(2)"></span>
+                    <span class="dot" role="button" tabindex="0" aria-label="Go to slide 3"
+                        onclick="currentSlide(3)"></span>
+                    <span class="dot" role="button" tabindex="0" aria-label="Go to slide 4"
+                        onclick="currentSlide(4)"></span>
+                    <span class="dot" role="button" tabindex="0" aria-label="Go to slide 5"
+                        onclick="currentSlide(5)"></span>
+
+                    <!--<span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>-->
+                </div>
+
+
+                <p class="text-invite-to-gallery">Visit <a href="./gallery.html">gallery</a> for more views!
+                </p>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p class="adress">Naturelorem Hotel Resort <span>I</span> Banjar Bresela <span>I</span> Ubud - Bali
+            <span>I</span> Indonesia
+        </p>
+        <p class="disclaimer"> Images are used for educational purposes only. <br>All image rights belong to their
+            respective
+            owners.</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>

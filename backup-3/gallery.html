@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturelorem Hotel Resort</title>
+    <meta name="description"
+        content="Explore the gallery of Naturelorem Hotel Resort and discover views of the pools, spa, surroundings and nature-inspired architecture in Ubud, Bali.">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="hero">
+            <a class="hero-logo-link" href="index.html" aria-label="Go to homepage">
+                <img class="hero-logo" src="./img/Naturelorem-300-273.webp" alt="Naturelorem logo" width="300"
+                    height="273">
+            </a>
+
+            <img class="hero-image" src="./img/hero-1920-664.webp"
+                alt="Tropical resort surrounded by lush green nature with terraces and pools">
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a class="nav-link" href="index.html">Welcome</a>
+                </li>
+                <li><a class="nav-link" href="book.html">Book</a></li>
+                <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1> See you around!</h1>
+
+
+        <div class="gallery">
+            <figure class="gallery-item">
+                <img src="img/bild-a.webp" alt="Tropical resort with infinity pool and lush green surroundings">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-b.webp" alt="Infinity pool with sun loungers overlooking a tropical jungle">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-e.webp"
+                    alt="Spa treatment with massage oil applied to a person lying on a massage table">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-d.webp" alt="Multi-level infinity pool surrounded by tropical jungle at a resort">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-h.webp" alt="Hotel corridor with wooden doors, stone walls, and soft lighting">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-c.webp"
+                    alt="Breakfast spread with eggs, rice, pastries, coffee, and tea on a wooden table">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-g.webp" alt="Outdoor swimming pool set in dense tropical jungle">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-i.webp" alt="Bedroom with canopy bed and large windows facing tropical greenery">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-j.webp" alt="Spacious resort suite with seating area and garden view">
+            </figure>
+
+            <figure class="gallery-item">
+                <img src="img/bild-f.webp" alt="Resort bedroom with canopy bed and balcony view">
+            </figure>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p class="adress">Naturelorem Hotel Resort <span>I</span> Banjar Bresela <span>I</span> Ubud - Bali
+            <span>I</span> Indonesia
+        </p>
+        <p class="disclaimer"> Images are used for educational purposes only. <br>All image rights belong to their
+            respective
+            owners.</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+    </script>
+
+</body>
+
+</html>
