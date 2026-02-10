@@ -125,15 +125,7 @@ h3, h4 {
   display: block;
 }
 
-@media (max-width: 500px) {
-  .main {padding: 1rem;}
-  .cards {grid-template-columns: 1fr;
-          gap: 2rem;}
-  .nav-link {font-size: 1.1rem;}
-  .hero-image {
-    content: url("./bilder/hero-mobile-182KB.webp");
-  }
-}
+
 
 .card {
    background-color: #D8D3C740;
@@ -370,19 +362,6 @@ footer {
 /** End Book.html **/
 
 
-/* Mobile */
-@media (max-width: 900px){
-  .two-column-grid{
-    grid-template-columns: 1fr;
-  }  
-
-  .btn{
-    width: 100%;
-    justify-self: stretch;
-    text-align: center;
-  }
-}
-
 .main-nav a:hover, .text-invite-to-gallery a:hover {
   color: rgba(180, 95, 40, 0.95);
 }
@@ -395,7 +374,6 @@ a:focus-visible {
 
 
 /** Start Gallery **/
-
 
 .gallery {
     display: grid;
@@ -411,26 +389,19 @@ a:focus-visible {
     height: 100%;
     margin: 0;
     padding: 16px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);    
+    background-color: #fff; 
+    padding: 12px; 
+    border-radius: 14px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    overflow: hidden;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;  
-    border-radius: 10px; /*8px*/
-    display: block;  
-    
+    display: block;      
 }
-
-.gallery-item {
-    background-color: #fff; 
-    padding: 12px; 
-    border-radius: 14px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
 
 
 /** Slideshow. Source W3Schools**/
@@ -552,4 +523,27 @@ a:focus-visible {
   font-size: 3rem;
   max-width: 60ch;
   
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .two-column-grid{
+    grid-template-columns: 1fr;
+  }  
+
+  .btn{
+    width: 100%;
+    justify-self: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {padding: 1rem;}
+  .cards {grid-template-columns: 1fr;
+          gap: 2rem;}
+  .nav-link {font-size: 1.1rem;}
+  .hero-image {
+    content: url("./bilder/hero-mobile-182KB.webp");
+  }
 }
