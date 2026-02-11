@@ -241,8 +241,6 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
 }
 
- 
-
 
 /* Form */
 .contact-form{
@@ -341,7 +339,7 @@ footer {
   place-items: center; 
   background-color: rgba(216, 211, 199, 0.25);
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 .right-card-book-page {
@@ -362,7 +360,6 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   margin: auto 10px; 
 }
-
 
 /** End Book.html **/
 
@@ -587,7 +584,7 @@ role button - element som gjorts knapplika*/
   .hero-image {
     content: url("./img/hero-mobile.webp");
   }
-  
+
   .main {
     padding: 1rem;
   }
@@ -610,4 +607,4 @@ role button - element som gjorts knapplika*/
     font-size: 1rem;
   }
 }
-}
+
