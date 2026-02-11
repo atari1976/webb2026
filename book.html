@@ -14,18 +14,21 @@
     <header class="page-header">
         <div class="hero">
             <a class="hero-logo-link" href="index.html" aria-label="Go to homepage">
-                <img class="hero-logo" src="./bilder/Naturelorem-300-273.webp" alt="Naturelorem logo" width="300"
+                <img class="hero-logo" src="./img/Naturelorem-300-273.webp" alt="Naturelorem logo" width="300"
                     height="273">
             </a>
 
-            <img class="hero-image" src="./bilder/hero-1920-664.webp"
+            <img class="hero-image" src="./img/hero-1920-664.webp"
                 alt="Tropical resort surrounded by lush green nature with terraces and pools">
         </div>
 
         <nav class="main-nav" aria-label="Main navigation">
             <ul>
-                <li><a class="nav-link" href="index.html">Welcome</a></li>
+                <li>
+                    <a class="nav-link" href="index.html">Welcome</a>
+                </li>
                 <li><a class="nav-link" href="book.html">Book</a></li>
+                <li><a class="nav-link" href="find-us.html">Find us</a></li>
                 <li><a class="nav-link" href="gallery.html">Gallery</a></li>
                 <li><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
@@ -37,25 +40,9 @@
 
         <section class="two-column-grid" aria-label="Booking and location">
 
-            <!-- Left card: map -->
+            <!-- Left card: booking form -->
 
-            <div class="left-card map-embed">
-                <h2 class="visually-hidden">Find us</h2>
-
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15783.698022460472!2d115.25927524685497!3d-8.506711314562457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d684fdc27d9%3A0x8e719708e5f8da03!2sKutuh%20Kelod%2C%20Desa%20Petulu%2C%20Kelurahan%20Ubud%2C%20Kelurahan%20Gianyar%2C%20Bali%2C%20Indonesien!5e0!3m2!1ssv!2sse!4v1770503767145!5m2!1ssv!2sse"
-                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    title="A map over Resort location">
-                </iframe>
-
-                <p class="map-note">
-                    Naturelorem Hotel Resort · Kutuh Kelod · Ubud, Bali
-                </p>
-            </div>
-
-            <!-- Right card: booking form -->
-
-            <div class="right-card">
+            <div class="left-card-book-page">
                 <h2>Booking request</h2>
 
                 <form class="contact-form" action="https://httpbin.org/post" method="post">
@@ -102,6 +89,12 @@
 
                     <button class="btn" type="submit">Send</button>
                 </form>
+            </div>
+
+            <!-- Right card: booking-form -->
+            <div class="right-card-book-page">
+                <img class="book-image" src="img/bild-book.webp"
+                    alt=">Tropical resort bedroom with canopy bed and wooden details">
             </div>
 
         </section>

@@ -11,10 +11,10 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  color: #222;
+  font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  color: #222;
   background-color: #F5F5F5;
   font-size: clamp(0.95rem, 2.5vw, 1rem);
 }
@@ -46,10 +46,18 @@ body {
   padding: 0;
 }
 
+.main-nav a {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px; /*gör hörnen så runda som möjligt*/
+}
 
-/*.hero {
-    display: grid;
-}*/
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background-color: #1F4F43; 
+  color: #fff;
+  text-decoration: none;
+}
+
 
 .hero {
   position: relative;
@@ -57,7 +65,6 @@ body {
   margin: 0 auto;
 }
 
-/* Positionering: elementet positioneras i förh. till sin urspr. position i flödet. När man anv. top, right, bottom eller left justeras elementet från dess ursprunglia plats, men påverkar fortfarande andra elements layout*/
 
 .hero-image {
   width: 100%;
@@ -72,10 +79,6 @@ body {
   display: block;
   width: clamp(100px, 14vw, 180px); 
   height: auto; 
-  /*top: clamp(2.5rem, 2.5vw, 8rem);
-  left: clamp(1.5rem, 3vw, 3.5rem);*/
-  /*top: 4.5rem;
-  left: 3rem;*/
 }
 
 .hero-logo-link {
@@ -93,7 +96,8 @@ body {
   padding: 2rem;
   background-color: #F5F5F5;
 }
-h1, h2, h3{
+
+h1, h2 {
   text-align: center;  
 }
 
@@ -105,10 +109,6 @@ h1 {
 h2 {
     margin: 1.875rem 0;
     font-size: clamp(1.2rem, 3vw, 1.8rem);
-}
-
-h3, h4 {
-  margin: 1.25rem 0;
 }
 
 .cards {
@@ -125,8 +125,6 @@ h3, h4 {
   display: block;
 }
 
-
-
 .card {
    background-color: #D8D3C740;
    border-radius: 20px;
@@ -140,8 +138,6 @@ h3, h4 {
   height: auto;
   display: block;
 }
-
-/*bara direkta barn till .card påverkas, inte alla bilder*/
 
 .card .img-two-people {
   width: min(450px, 100%);
@@ -159,8 +155,15 @@ h3, h4 {
 }
 
 .text-invite-to-gallery a {
-  color: #2F6F5E;
+  color: #5b4607;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.text-invite-to-gallery a:hover, .text-invite-to-gallery a:focus-visible {
+  color: #116750;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 
@@ -180,7 +183,7 @@ footer {
 
 .adress,
 .disclaimer {
-  max-width: 50ch;
+  max-width: 60ch;
   margin-inline: auto;
 }
 
@@ -226,13 +229,6 @@ footer {
   padding: 1.5rem;
 }
 
-/*.right-card-overlay{
-  position: relative;
-  display: grid;
-  place-items: end;
-  background-color: 0;
-  
-}*/
 
 .contact-image{
   width: 100%;
@@ -240,25 +236,11 @@ footer {
   object-fit: cover;
   border-radius: 14px;
   display: block;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
 }
 
-/*.contact-image{
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  border-radius: 14px;
-  display: block;
-  margin-top: 0.5rem;
-}
+ 
 
-
-.right-card img {
-  margin-top: 0.5rem;
-  max-height: 520px;
-  object-fit: cover;
-}*/
 
 /* Form */
 .contact-form{
@@ -296,10 +278,6 @@ footer {
   max-width: 520px;
 }
 
-/*.contact-form .field input{
-  max-width: 480px;
-}*/
-
 
 .field textarea{
   resize: vertical; /* Användaren får bara ändra höjden, inte bredden*/
@@ -315,9 +293,7 @@ footer {
   background-color: rgba(216, 211, 199, 0.35);
   border-radius: 14px;
   font-size: 0.95rem;
-} /* lilla boxen med checkbox och consent-text */
-/* 18px - checkboxen samma visuella bredd oavsett skärm, inte växa, inte krympa för mycket
-1 fr - ta resten av uttrymme som blir över*/
+}
 
 .consent-box input{
   margin-top: 0.2rem;
@@ -337,18 +313,19 @@ footer {
 
 /* Button */
 .btn{
+  font-size: 1.2rem;
   padding: 0.6rem 1.6rem;
   border: none;
   border-radius: 10px;
-  background-color: #2F6F5E;
+  background-color: #336154;
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   justify-self: start;
 }
 
 .btn:hover{
-  background-color: #25594c;
+  background-color: #1A4339;
 }
 
 /** End contact.html **/
@@ -357,34 +334,82 @@ footer {
 
 /** Start Book.html **/
 
-/*left card*/
-.map-note{
-  margin-top: 0.9rem;
-  font-size: 0.95rem;
-  color:#2F6F5E;
+ .left-card-book-page {
+  display: grid;
+  place-items: center; 
+  background-color: rgba(216, 211, 199, 0.25);
+  border-radius: 20px;
+  padding: 1.5rem;
 }
 
-.map-embed iframe{
-    height: 420px;
-    width: 100%;
-    height: clamp(280px, 35vw, 420px);
-    border: 0;
-    border-radius: 14px;
-    display: block;
-  } 
+.right-card-book-page {
+  display: grid;
+  place-items: center;
+  background-color: rgba(216, 211, 199, 0.25);
+  border-radius: 20px;
+  padding: 30px;
+
+}
+
+.book-image{
+  width: 100%;
+  height: clamp(360px, 45vw, 560px);
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  margin: auto 10px; 
+}
+
 
 /** End Book.html **/
 
+/** Start find-us.html **/
 
-.main-nav a:hover, .text-invite-to-gallery a:hover {
-  color: rgba(180, 95, 40, 0.95);
+.map-section {
+  display: grid;
+  place-items: center;
+  margin: 2.5rem auto;    
 }
 
-a:focus-visible {
-     outline: 2px solid rgba(180, 95, 40, 0.95);
-     outline-offset: 0.25rem;
+.map-card {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 15px;
+  background-color: rgba(216, 211, 199, 0.25);
+  padding: 1.25rem;
+  border: 2px solid rgba(180, 95, 40, 0.95);
 }
 
+.map-note{  
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  color:#000503;
+}
+
+.map-embed iframe{
+    width: 100%;
+    height: clamp(400px, 50vw, 650px);
+    border: 0;
+    border-radius: 15px;
+    display: block;
+  } 
+
+  /** End find-us **/
+
+
+
+/* Tillgänglighet: samma färg för alla fokusringar på sidan.
+Delar av kod är lånade. Koden anpassad. */
+:where(a, button, input, textarea, [role="button"], [tabindex]):focus-visible {
+  outline: 3px solid rgba(180, 95, 40, 0.95);
+  outline-offset: 4px; /* Ökad avstånd mellan fokusringen och elementet*/ 
+  border-radius: 12px;
+}
+ 
+/* :where (specificitet 0), låter en skriva en lång lista med selektorer utan att höja specificiteten.
+[tabindex] - för slideshow pilar och dots.
+role button - element som gjorts knapplika*/
 
 
 /** Start Gallery **/
@@ -558,6 +583,6 @@ a:focus-visible {
           gap: 2rem;}
   .nav-link {font-size: 1.1rem;}
   .hero-image {
-    content: url("./bilder/hero-mobile-182KB.webp");
+    content: url("./img/");
   }
 }
