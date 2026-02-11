@@ -584,6 +584,9 @@ role button - element som gjorts knapplika*/
 
 @media (max-width: 600px) {
 
+  .hero-image {
+    content: url("./img/hero-mobile.webp");
+
   .main {
     padding: 1rem;
   }
