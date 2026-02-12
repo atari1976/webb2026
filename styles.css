@@ -565,7 +565,6 @@ role button - element som gjorts knapplika*/
   
 }
 
-/* Mobile */
 @media (max-width: 900px){
   .two-column-grid{
     grid-template-columns: 1fr;
@@ -607,6 +606,16 @@ role button - element som gjorts knapplika*/
     font-size: 1rem;
   }
 }
+
+@media (max-width: 600px){
+
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+}
+
 
 /*@media (max-width: 420px) {
   .adress { 
