@@ -608,3 +608,9 @@ role button - element som gjorts knapplika*/
   }
 }
 
+/*@media (max-width: 420px) {
+  .adress { 
+    font-size: 0.95rem; 
+    padding-inline: 0.5rem;
+  }
+}*/
