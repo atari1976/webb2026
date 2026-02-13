@@ -12,12 +12,14 @@ html {
 body {
   min-height: 100vh;
   font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   line-height: 1.5;
   color: #222;
   background-color: #F5F5F5;
   font-size: clamp(0.95rem, 2.5vw, 1rem);
+  /* font-size: clamp(0.95rem, 0.4vw + 0.9rem, 1.05rem);*/
 }
+
 
 .main-nav {
   background: #d7d3c8;
