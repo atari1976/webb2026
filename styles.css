@@ -611,8 +611,8 @@ role button - element som gjorts knapplika*/
 
   .gallery {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto; /*radhöjden bestäms av
-    padding: 0;*/
+    grid-auto-rows: auto; /*radhöjden bestäms av innehållet*/
+    padding: 0;
   }
 }
 
