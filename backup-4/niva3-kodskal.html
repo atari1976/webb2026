@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktiv Webbplats</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
 
     <style>
         :root {
             --primary-color: #e1f1f4;
             --secondary-color: #c5f8f6;
             /*--secondary-color: #ab87ff;*/
+            --secondary-hover: #31FFFF;
             --text-color: #333;
             --fourth-color: #023c5d;
+            --focus-ring: #7000ad;
         }
 
         body {
@@ -59,16 +59,6 @@
             }
         }*/
 
-        main {
-            container-type: inline-size;
-        }
-
-
-        main h1 {
-            font-size: 1.4rem;
-            margin: 0 0 20px 0;
-        }
-
         .container {
             display: grid;
             grid-template-columns: 1fr 3fr;
@@ -77,13 +67,20 @@
             padding: 70px 20px 20px;
             gap: 20px;
 
+            main {
+                container-type: inline-size;
+
+                h1 {
+                    font-size: 1.4rem;
+                    margin: 0 0 20px 0;
+                }
+            }
         }
 
         .card-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            container-type: inline-size;
             margin: 10px 0 10px 0;
         }
 
@@ -110,12 +107,20 @@
             background: var(--secondary-color);
             font-size: 0.9rem;
             padding: 8px 14px;
-            padding: 10px;
             border: none;
             cursor: pointer;
             margin-top: 30px;
             border-radius: 5px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+            &:hover {
+                background-color: var(--secondary-hover);
+            }
+
+            &:focus-visible {
+                outline: 3px solid var(--focus-ring);
+                outline-offset: 3px;
+            }
         }
 
         @media (max-width: 760px) {
@@ -141,16 +146,6 @@
             }
 
         }
-
-        /*@media (max-width: 500px) {
-            main h1 {
-                font-size: 1rem;
-            }
-
-            main p {
-                font-size: 0.9rem;
-            }
-        }*/
 
 
         @container (max-width: 500px) {
@@ -178,103 +173,48 @@
             }
         }
     </style>
-    <!--
-    /* 📝 3. Grundläggande styling för body:
-    - Sätt font till Arial
-    - Använd CSS-variabler för bakgrunds- och textfärg
-    - Ta bort margin och padding
-    */
-
-    /* 📝 4. Skapa en navigationsmeny med:
-    - En bakgrundsfärg
-    - Fixerad position högst upp på sidan
-    - Flexbox för att centrera länkarna
-    - Rätt padding och höjd
-    */
-
-    /* 📝 5. Styling för menyns länkar:
-    - Vit text
-    - Ingen understrykning
-    - Lämpligt avstånd mellan länkarna
-    */
-
-    /* 📝 6. Skapa en container med CSS Grid:
-    - Dela sidan i två kolumner (1fr 3fr)
-    - Lägg till en buffert under menyn med padding-top
-    - Maxbredd på 1000px
-    - Centrera layouten horisontellt
-    */
-
-    /* 📝 7. Skapa en kortcontainer med flexbox:
-    - Gör att korten radbryts om de inte får plats
-    - Justera gap mellan korten
-    */
-
-    /* 📝 8. Styling för kort:
-    - Vit bakgrund
-    - Rundade hörn
-    - Padding och textcentrering
-    - Sätt en minsta bredd
-    */
-
-    /* 📝 9. Styling för temaknappen:
-    - Använd secondary-color som bakgrund
-    - Vit text
-    - Rundade hörn och padding
-    - Ändra färg vid hover
-    */
-
-    /* 📝 10. Lägg till en media query:
-    - Ändra layouten för mobil (grid-template-columns till 1fr)
-    - Gör korten mer centrerade
-    - Justera menyn vid små skärmar
-    */. -->
 
 </head>
 
 <body>
 
-    <!-- 📝 11. Skapa en navigationsmeny -->
     <nav
         class="fixed top-0 left-0 w-screen h-14 flex items-center justify-center z-50 text-white bg-[var(--fourth-color)] shadow">
         <ul class="flex gap-6 font-medium">
-            <li><a class="hover:underline" href="#">Hem</a></li>
-            <li><a class="hover:underline" href="#">Om oss</a></li>
-            <li><a class="hover:underline" href="#">Kontakt</a></li>
+            <li><a class="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-4"
+                    href="#">
+                    Hem</a></li>
+            <li><a class="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-4"
+                    href="#">Om oss</a></li>
+            <li><a class="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-4"
+                    href="#">Kontakt</a></li>
         </ul>
     </nav>
 
-    <!-- 📝 12. Skapa en behållare för layouten -->
     <div class="container">
-        <!-- 📝 13. Lägg till en sidomeny med en titel och ett inlägg -->
         <aside>
             <h2>Senaste inlägg</h2>
             <p>🎟️ Nytt event på gång!</p>
         </aside>
 
-        <!-- 📝 14. Lägg till huvudinnehållet -->
         <main>
             <h1>Välkommen till vår webbplats!</h1>
             <p>Här hittar du de senaste uppdateringarna.</p>
 
-            <!-- 📝 15. Skapa en kortcontainer -->
             <div class="card-container">
                 <div class="card">Kort 1</div>
                 <div class="card">Kort 2</div>
                 <div class="card">Kort 3</div>
             </div>
 
-            <!-- 📝 16. Skapa en knapp för att växla tema -->
             <button class="toggle-theme" onclick="toggleTheme()">Byt Tema</button>
         </main>
     </div>
 
-    <!-- 📝 17. Lägg till en sidfot -->
     <footer>
         <p>&copy; 2024 Interaktiv Webbplats</p>
     </footer>
 
-    <!-- 📝 18. Skapa JavaScript-funktionen för att byta tema -->
     <script>
         function toggleTheme() {
             let root = document.documentElement;
@@ -285,12 +225,13 @@
                 root.style.setProperty("--secondary-color", "#b7efed");
                 root.style.setProperty("--text-color", "#333");
                 root.style.setProperty("--fourth-color", "#023c5d");
+                root.style.setProperty("--secondary-hover", "#31FFFF");
             } else {
                 root.style.setProperty("--primary-color", "#111827");
                 root.style.setProperty("--secondary-color", "#0F766E");
                 root.style.setProperty("--text-color", "#F1F5F9");
                 root.style.setProperty("--fourth-color", "#0B1220");
-                let isDark = root.style.getPropertyValue("--primary-color"); root.dataset.theme = "dark";
+                root.style.setProperty("--secondary-hover", "#0B5E57");
 
             }
         }
