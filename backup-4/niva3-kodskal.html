@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktiv Webbplats</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description"
+        content="Interaktiv och responsiv webbplats med CSS Grid, Flexbox, Container Queries och ett ljust/mörkt tema som växlas med JavaScript. Navigationsmeny byggd med Tailwind och tydlig fokusmarkering för tangentbordsnavigering.">
+
 
     <style>
         :root {
@@ -14,8 +17,9 @@
             /*--secondary-color: #ab87ff;*/
             --secondary-hover: #31FFFF;
             --text-color: #333;
-            --fourth-color: #023c5d;
-            --focus-ring: #7000ad;
+            --fourth-color: #0b1220;
+            /*--fourth-color: #023c5d;*/
+            --focus-ring: #93C5FD;
         }
 
         body {
@@ -150,26 +154,24 @@
 
         @container (max-width: 500px) {
 
-            main {
-                h1 {
-                    font-size: 1rem;
-                }
+            .container main h1 {
+                font-size: 1rem;
+            }
 
-                p {
-                    font-size: 0.9rem;
-                }
+            .container main p {
+                font-size: 0.9rem;
+            }
 
-                .card {
-                    font-size: 0.9rem;
-                    flex: 0 0 90%;
-                    max-width: 90%;
-                    margin-inline: auto;
-                    background-color: #f8f1e2;
-                }
+            .card {
+                font-size: 0.9rem;
+                flex: 0 0 90%;
+                max-width: 90%;
+                margin-inline: auto;
+                background-color: #f8f1e2;
+            }
 
-                .card-container {
-                    display: flex;
-                }
+            .card-container {
+                display: flex;
             }
         }
     </style>
@@ -218,7 +220,7 @@
     <script>
         function toggleTheme() {
             let root = document.documentElement;
-            let isDark = root.style.getPropertyValue("--primary-color") === "#111827";
+            let isDark = root.style.getPropertyValue("--primary-color") === "#0f172a";
 
             if (isDark) {
                 root.style.setProperty("--primary-color", "#e1f1f4");
@@ -227,12 +229,11 @@
                 root.style.setProperty("--fourth-color", "#023c5d");
                 root.style.setProperty("--secondary-hover", "#31FFFF");
             } else {
-                root.style.setProperty("--primary-color", "#111827");
-                root.style.setProperty("--secondary-color", "#0F766E");
+                root.style.setProperty("--primary-color", "#0f172a");
+                root.style.setProperty("--secondary-color", "#134E4A");
                 root.style.setProperty("--text-color", "#F1F5F9");
                 root.style.setProperty("--fourth-color", "#0B1220");
-                root.style.setProperty("--secondary-hover", "#0B5E57");
-
+                root.style.setProperty("--secondary-hover", "#0A4B45");
             }
         }
     </script>
