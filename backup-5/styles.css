@@ -26,6 +26,15 @@
             background: rgb(201, 233, 255);
             padding: 10px;
             text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .a-scene {
+            position:relative;
+            z-index: 1; 
+        } /*För A-frame scen*/
 
             ul {
                 display: flex;
@@ -50,7 +59,6 @@
                     }
                 }
             }
-        }
 
         
         .h1-platta {
@@ -80,7 +88,13 @@
         }
 
         /* Video */
-        .video-container {
+
+        .video-box video {
+            width: 800px;
+            height: auto;
+        }
+
+        .video-container video{
             position: fixed;
             top: 0;
             left: 0;
@@ -95,14 +109,6 @@
             object-fit: cover;
         }
 
-        .content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            text-align: center;
-            margin-top: 20%;
-            font-size: 24px;
-        }
-
+        
 
 
