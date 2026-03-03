@@ -109,6 +109,8 @@
             object-fit: cover;
         }
 
-        
+        .a-enter-vr-button {
+    display: none !important;
+    } /*tillfällig lösning tills jag hittar någon annan*/
 
 
