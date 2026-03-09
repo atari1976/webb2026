@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avancerad interaktiv webbsida - Nivå 3</title>
+    <style>
+        /* Grundläggande stil och layout */
+        /*body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }*/
+
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(0, 0, 0);
+            background-color: #f2fcfb;
+            font-size: 1rem;
+            margin: 0;
+            padding: 1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            /*standard*/
+            align-items: center;
+            margin: 3.125rem auto;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            /* Ändrade från 28px till 1.75rem. När 1rem = 16px, blir 28px = 28/16 */
+            text-align: center;
+        }
+
+        button {
+            padding: 0.625rem 1.25rem;
+            /*Ändrade padding från 10px 20px till rem */
+            font-size: 1rem;
+            /* Ändrade från 14px till 1rem, tillgänglighet & responsiv design */
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        /* Anpassad fokusmarkering för tangentbordsnavigering */
+        button:focus,
+        input:focus {
+            outline: 4px dashed orange;
+        }
+
+        /* Stil för rutor som skapas dynamiskt */
+        .ruta {
+            width: 6.25rem;
+            /* Tidigare 100px*/
+            height: 6.25rem;
+            /* Tidigare 100px */
+            background-color: lightgreen;
+            margin: 0.625rem 0;
+            /* Tidigare 10px 0; */
+            text-align: center;
+            line-height: 6.25rem;
+            /* Tidigare 100px */
+            font-weight: bold;
+        }
+
+        #halsning {
+            font-weight: 700;
+        }
+
+        .bildhamtning {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        #knapp-hamta-bild {
+            margin: 20px auto;
+            margin-bottom: 2rem;
+        }
+
+        #bild {
+            width: min(100%, 32rem);
+            height: auto;
+            display: block;
+            margin-top: 2rem;
+            border-radius: 8px;
+        }
+
+        #skamt {
+            max-width: 65ch;
+            line-height: 1.6rem;
+            margin: 50px auto;
+            font-size: 1.2rem;
+        }
+
+
+
+        /* Media query – mobilanpassning */
+        @media (max-width: 600px) {
+
+            main {
+                margin: 2rem auto;
+            }
+
+            body {
+                font-size: 1rem;
+                /* Ändrade från 14px till 16px och därefter till 1rem. Text på ca. 14px kan vara för litet för mobiltelefoner */
+            }
+
+            button {
+                margin: 1rem 0;
+
+            }
+
+            .ruta {
+                width: 5rem;
+                /* Tidigare 80px */
+                height: 5rem;
+                /* Tidigare 80px */
+                line-height: 5rem;
+                /* Tidigare 80px */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Sidans rubrik -->
+        <h1>Avancerad interaktiv webbsida</h1>
+    </header>
+
+    <main>
+        <!-- Sektion 1: Skapa och rensa rutor -->
+        <section aria-labelledby="rutaRubrik">
+            <h2 id="rutaRubrik">Skapa rutor</h2>
+
+            <button class="skapa-ruta">Skapa ruta</button>
+
+            <!--<button class="skapa-ruta" aria-label="Skapa en ruta">Skapa ruta</button> -->
+
+            <button class="reset-button" aria-label="Rensa alla rutor">Återställ</button>
+
+            <!--<button class="reset-button" aria-label="Rensa alla rutor">Återställ</button>-->
+
+            <!-- Div för att visa rutor – lägg till id -->
+            <div class="container"></div> <!--Ändrade från id till class-->
+        </section>
+        <section>
+            <script>
+                document.querySelector(".skapa-ruta").addEventListener("click", function () {
+                    let nyRuta = document.createElement("div");
+                    nyRuta.className = "ruta";
+                    nyRuta.innerText = "Ny ruta";
+                    document.querySelector(".container").appendChild(nyRuta);
+                }); </script>
+
+            <script>
+                // återställ
+                document.querySelector(".reset-button").addEventListener("click", function () {
+                    document.querySelector(".container").innerHTML = "";
+                });
+            </script>
+        </section>
+
+        <!-- Sektion 2: Spara och visa namn med LocalStorage -->
+        <section aria-labelledby="namnRubrik">
+            <h2 id="namnRubrik">Spara namn</h2>
+
+            <label for="namnInput">Skriv ditt namn:</label>
+            <input type="text" id="namnInput" autocomplete="name">
+
+            <!-- Knapp för att spara namn – id -->
+            <button onclick="sparaNamn()" id="sparaNamn">Spara namn</button>
+
+            <!-- Paragraf för hälsning – id, role="status", aria-live="polite" -->
+            <p id="halsning" role="status" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <script>
+                function sparaNamn() {
+                    let namn = document.getElementById("namnInput").value; // Hämtar användarens namn från inputfältet.
+                    localStorage.setItem("användarnamn", namn);//Namnet sparas i LocalStorage.
+                    visaHälsning();
+                }
+                //När sidan laddas hämtas det sparade namnet igen.
+                function visaHälsning() {
+                    let sparatNamn = localStorage.getItem("användarnamn");//Namnet hämtas och texten skrivs ut.
+
+                    if (sparatNamn) {
+                        document.getElementById("halsning").innerText = "Välkommen tillbaka, " + sparatNamn + "!";
+                    }
+                }
+                visaHälsning();
+            </script>
+        </section>
+
+        <!-- Sektion 3: Hämta fakta med Fetch API -->
+        <section aria-labelledby="faktaRubrik">
+            <h2 id="faktaRubrik">Hämta fakta</h2>
+
+            <button id="hamta-skamt">Hämta ett skämt</button>
+            <!-- <button id="hamta-skamt" aria-label="Hämta ett skämt">Hämta ett skämt</button> -->
+
+            <!-- Paragraf för att visa fakta-->
+            <div id="skamt" role="status" aria-live="polite"></div>
+            <!-- role="status" markerar att området visar statusinformation.
+            aria-live="polite" gör att skärmläsaren märker när innehållet uppdateras utan att sidan laddas om.
+            När texten i div-elementet ändras kan skärmläsaren läsa upp den.-->
+        </section>
+
+        <section>
+            <script>
+                document.getElementById("hamta-skamt").addEventListener("click", async function () {
+                    try {
+                        let respons = await fetch("https://api.chucknorris.io/jokes/random"); //Pausa funktionen tills data från servern kommer.
+                        let data = await respons.json();// Gör om svaret till ett JavaScript-objekt.
+
+                        document.getElementById("skamt").innerText = data.value; // Visar skämtet.
+
+                    } catch (fel) {
+                        document.getElementById("skamt").innerText = "Det gick inte att hämta ett skämt just nu.";
+                    } // Med try/catch får användaren ett meddelande om texten inte laddas, t.ex. när API-servern är nere, servern svarar med ett fel m.m.
+                }); 
+            </script>
+        </section>
+
+        <!-- Sektion 4: Bild med alt-text -->
+
+        <section class="bildhamtning" aria-labelledby="bildRubrik">
+            <!--Sektionen får sitt tillgängliga namn från rubriken nedan. 
+            aria-labelledby måste peka på ett id som finns i dokumentet. -->
+            <h2 id="bildRubrik">Bild med alt-text</h2>
+
+            <button id="knapp-hamta-bild">Hämta bild</button>
+
+            <img id="bild" src="https://picsum.photos/600/300?random=1" alt="Slumpmässig bild" width="600" height="300"
+                loading="lazy">
+            <!-- Har angett width/height för ursprunlig storlek så att webbläsaren reserverar plats för bilden direkt.
+             Annars vet inte webbläsaren hur stor bilden är innan den laddas.
+             Med loading="lazy" laddas bilden ned först när den behövs. -->
+        </section>
+        <section>
+            <script>
+                document.getElementById("knapp-hamta-bild").addEventListener("click", async function () {
+                    let respons = await fetch("https://picsum.photos/600/300?random=1");
+                    document.getElementById("bild").src = respons.url;
+                });
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Sidfot med t.ex. ditt namn eller datum -->
+        <p>&copy; 2025 Avancerad sida</p>
+    </footer>
+</body>
+
+</html>
