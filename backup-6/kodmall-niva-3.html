@@ -84,15 +84,29 @@
         .bildhamtning {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 2rem;
+            align-items: center;
+            padding: 0;
+            margin-bottom: 0.75rem;
         }
 
-        /*knapp*/
         .knapp-hamta-bild {
             margin: 20px auto;
+            margin-bottom: 2rem;
         }
 
+        #bild {
+            width: min(100%, 32rem);
+            height: auto;
+            display: block;
+            margin-top: 2rem;
+            border-radius: 8px;
+        }
+
+        #skamt {
+            max-width: 65ch;
+            line-height: 1.6rem;
+            margin: 50px auto;
+        }
 
 
 
@@ -110,6 +124,7 @@
 
             button {
                 margin: 1rem 0;
+
             }
 
             .ruta {
@@ -160,10 +175,9 @@
         </section>
 
         <!-- Sektion 2: Spara och visa namn med LocalStorage -->
-        <section aria-labelledby="Ange ditt namn">
+        <section aria-labelledby="namnRubrik">
             <h2 id="namnRubrik">Spara namn</h2>
 
-            <!-- Inputfält för namn – lägg till id och aria-label -->
             <label for="namnInput">Skriv ditt namn:</label>
             <input type="text" id="namnInput" aria-label="Skriv ditt namn" autocomplete="name">
 
@@ -194,25 +208,45 @@
         <!-- Sektion 3: Hämta fakta med Fetch API -->
         <section aria-labelledby="faktaRubrik">
             <h2 id="faktaRubrik">Hämta fakta</h2>
-            <!-- Knapp för att hämta fakta – id, aria-label -->
+
+            <button id="hamta-skamt" aria-label="Hämta ett skämt">Hämta ett skämt</button>
+
+            <div id="skamt" role="status" aria-live="polite"></div> <!--role-status - "Detta oråde visar statusinformation",
+            aria-live - gör att skärmläsaren märker när innehållet förändras (utan att sidan laddas om)
+            När texten ändras i div kan skärmläsaren läsa upp det-->
+
+
+            <!--// Vid klick: använd Fetch API, hämta fakta från API, visa i fakta-paragrafen
+        // URL: https://api.chucknorris.io/jokes/random -->
             <!-- Paragraf för att visa fakta – id, role="region", aria-live="polite" -->
+
+            <script>
+                document.getElementById("hamta-skamt").addEventListener("click", async function () {
+                    try {
+                        let respons = await fetch("https://api.chucknorris.io/jokes/random");
+                        let data = await respons.json();//Gör om svaret till ett JavaScript-JavaScript-objekt
+                        document.getElementById("skamt").innerText = data.value; //I detta API ligger själva skämtet i egenskapen value, och innerText-skriver ut texten i div.
+                    } catch (fel) {
+                        document.getElementById("skamt").innerText = "Det gick inte att hämta ett skämt just nu.";
+                    }
+                });
+
+            </script>
         </section>
 
         <!-- Sektion 4: Bild med alt-text -->
-        <section class="bildhamtning" aria-labelledby="Hämta en bild">
-            <h2>Bild med alt-text</h2>
+
+        <section class="bildhamtning" aria-labelledby="bildRubrik">.
+            <!--Sectionens "betydelse" ges av ett annat element, och aria-labelledby måste peka på ett befintligt id.-->
+            <h2 id="bildRubrik">Bild med alt-text</h2>
 
             <button id="knapp-hamta-bild">Hämta bild</button>
 
-            <!-- Infoga bild från https://picsum.photos/200/100?random=1 -->
-
-            <!-- Alt-text som förklarar att bilden är slumpad -->
-
-            <img id="bild" src="https://picsum.photos/200/100?random=1" alt="Slumpmässig bild">
+            <img id="bild" src="https://picsum.photos/600/300?random=1" alt="Slumpmässig bild">
 
             <script>
                 document.getElementById("knapp-hamta-bild").addEventListener("click", async function () {
-                    let respons = await fetch("https://picsum.photos/200/100?random=1");
+                    let respons = await fetch("https://picsum.photos/600/300?random=1");
                     document.getElementById("bild").src = respons.url;
                 });
             </script>
@@ -240,9 +274,7 @@
         // Visa hälsning – hämta sparat namn från LocalStorage vid sidladdning
         // Om namn finns: visa texten "Hej, [namn]!" i hälsning-paragrafen
 
-        // Hämta fakta – hämta knapp
-        // Vid klick: använd Fetch API, hämta fakta från API, visa i fakta-paragrafen
-        // URL: https://api.chucknorris.io/jokes/random
+
     </script>
 </body>
 
