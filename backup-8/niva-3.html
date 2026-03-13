@@ -21,30 +21,64 @@ Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktiv sida</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src
-    'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self';">
+    <meta name="description"
+        content="En enkel webbsida där användaren kan skriva och visa ett meddelande. Exemplet demonstrerar säker hantering av användarinput och optimerade bilder.">
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .button-m {
+            background-color: rgb(250, 242, 221);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .meddelande {
+            display: flex;
+            justify-content: center;
+            margin: 2.5rem auto;
+        }
+    </style>
+
 </head>
 
 <body>
     <main>
-        <section>
+        <section class="meddelande">
             <h1>Användarinteraktion</h1>
 
             <p>Skriv ett meddelande:</p>
             <input type="text" id="inputMeddelande">
             <button id="button-m">Skicka</button>
             <div id="output"></div>
+        </section>
+        <section class="bild">
+
+            <!-- Optimerad bild -->
+            <picture>
+                <source srcset="skrivmaskin.webp" type="image/webp" width="800" loading="lazy">
+                <img src="./image/skrivmaskin.webp" alt="Äldre svart skrivmaskin på ett skrivbord framför ett fönster">
+            </picture>
+            <!-- Bild: CCO / Public  Domain -->
 
         </section>
-
-        <!-- Optimerad bild -->
-        <picture>
-            <source srcset="skrivmaskin.webp" type="image/webp" width="800" loading="lazy">
-            <img src="./image/skrivmaskin.webp" alt="Äldre svart skrivmaskin på ett skrivbord framför ett fönster">
-        </picture>
-        <!-- Bild: CCO / Public  Domain -->
-
-        <section></section>
 
 
         <!-- Onödig animation 
