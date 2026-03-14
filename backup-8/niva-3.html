@@ -38,12 +38,11 @@ Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen
 
             <form>
                 <label for="inputMeddelande">Lämna ett meddelande:</label>
-                <input type="text" id="inputMeddelande">
+                <input type="text" id="inputMeddelande" placeholder="Skriv här">
                 <button type="button" id="button-m">Skicka</button>
-                <div id="output" aria-label="polite"></div>
+                <div id="output" aria-live="polite"></div>
             </form>
             <!--aria-label="Skicka meddelande" behövs inte för button eftersom texten på knappen "Skicka" redan är tillräckligt bra.-->
-
 
             <picture>
                 <source srcset="./image/skrivmaskin.webp" type="image/webp">
@@ -56,19 +55,9 @@ Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen
 
         <script src="script.js"></script>
 
-        <!-- Onödig animation 
-    <script>
-        setInterval(function () {
-            document.body.style.backgroundColor = "rgb(" +
-                Math.floor(Math.random() * 256) + "," +
-                Math.floor(Math.random() * 256) + "," +
-                Math.floor(Math.random() * 256) + ")";
-        }, 500); // ❌ Hög energiförbrukning
-    </script> -->
-
     </main>
     <footer>
-        <p>&copy; 2026 Organisation Glada IT-elever</p>
+        <p>&copy; 2026 Olivia</p>
     </footer>
 </body>
 
