@@ -1,0 +1,97 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #f5f5f5;
+            --text: #111111;
+            --card-bg: #ffffff;
+            --border: #d8d3c7;
+            --button-bg: rgb(250, 242,221);
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 620px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 6px 18px rgba(0,0,0, p.08);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;max-width: 360px;
+            justify-self: center;
+            padding: 0.7rem 0.8rem;
+            font: inherit;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+        }
+
+        #button-m {
+            justify-self: center;
+            padding: 0.7rem 1.2rem;
+            font: inherit;
+            background-color: var(--button-bg);
+            border: 1px solid #999;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #output {
+            min-height: 1.5rem;
+        }
+
+        picture {
+            display: block;
+        }
+
+        img {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+
+        :where(button, input):focus-visible {
+            outline: 3px solid rgba(180, 95,40, 0.95);
+            outline-offset: 3px;
+        }
+
+        
+

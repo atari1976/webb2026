@@ -32,21 +32,19 @@ Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen
 </head>
 
 <body>
-    <main>
-        <section class="interaktion">
+    <main class="page">
+        <section class="card">
             <h1>Användarinteraktion</h1>
 
-            <!-- Flyttade texten i <p>Skriv ett meddelande:</p> in i formuläret för att skapa koppling mellan text och inputfält -->
-            <form action="exempel.se/mapp" method="post">
-                <label for="inputMeddelande">Skriv ett meddelande:</label>
+            <form>
+                <label for="inputMeddelande">Lämna ett meddelande:</label>
                 <input type="text" id="inputMeddelande">
-                <button id="button-m" aria-label="Skicka meddelande">Skicka</button>
-                <div id="output"></div>
+                <button type="button" id="button-m">Skicka</button>
+                <div id="output" aria-label="polite"></div>
             </form>
-        </section>
-        <section class="bild">
+            <!--aria-label="Skicka meddelande" behövs inte för button eftersom texten på knappen "Skicka" redan är tillräckligt bra.-->
 
-            <!-- Optimerad bild -->
+
             <picture>
                 <source srcset="./image/skrivmaskin.webp" type="image/webp">
                 <img src="./image/skrivmaskin.webp" alt="Äldre svart skrivmaskin på ett skrivbord framför ett fönster"
@@ -56,6 +54,7 @@ Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen
 
         </section>
 
+        <script src="script.js"></script>
 
         <!-- Onödig animation 
     <script>
@@ -67,8 +66,10 @@ Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen
         }, 500); // ❌ Hög energiförbrukning
     </script> -->
 
-        <script src="script.js"></script>
     </main>
+    <footer>
+        <p>&copy; 2026 Organisation Glada IT-elever</p>
+    </footer>
 </body>
 
 </html>
