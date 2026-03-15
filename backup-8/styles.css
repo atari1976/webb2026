@@ -73,7 +73,11 @@
         }
 
         #output {
-            min-height: 1.5rem;
+            background: rgba(0,0,0,0.04);
+            border-radius: 6px;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            min-height: 1.5rem;            
         }
 
         picture {

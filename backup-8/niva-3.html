@@ -37,16 +37,30 @@ Hur har du ökat säkerheten, tillgängligheten och minskat energiförbrukningen
             <h1>Användarinteraktion</h1>
 
             <form>
+                <label for="namn">Namn</label>
+                <input type="text" id="namn" name="Namn" required>
+                <label for="epost">Epost
+                    <input type="email" placeholder="din-epost@exempel.se" name="email"></label>
                 <label for="inputMeddelande">Lämna ett meddelande:</label>
-                <input type="text" id="inputMeddelande" placeholder="Skriv här">
+                <input type="text" id="inputMeddelande" name="meddelande" placeholder="Skriv här">
                 <button type="button" id="button-m">Skicka</button>
                 <div id="output" aria-live="polite"></div>
+                <label>
+                    <input type="checkbox" id="consent"> Jag godkänner att uppgifterna används för att svara på mitt
+                    meddelande.
+                </label>
+                <label>
+                    <input type="checkbox" id="marketing-consent"> Jag godkänner att mina uppgifter samlas för
+                    nyhetsbrev.
+                </label>
             </form>
             <!--aria-label="Skicka meddelande" behövs inte för button eftersom texten på knappen "Skicka" redan är tillräckligt bra.-->
 
+            <button id="accept">Acceptera cookies</button>
+
             <picture>
                 <source srcset="./image/skrivmaskin.webp" type="image/webp">
-                <img src="./image/skrivmaskin.webp" alt="Äldre svart skrivmaskin på ett skrivbord framför ett fönster"
+                <img src="./image/skrivmaskin.jpg" alt="Äldre svart skrivmaskin på ett skrivbord framför ett fönster"
                     width="800" loading="lazy">
             </picture>
             <!-- Bild: CCO / Public  Domain -->
