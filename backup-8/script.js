@@ -1,4 +1,4 @@
-document.getElementById("button-m").addEventListener("click", visaMeddelande);
+document.getElementById("btn-m").addEventListener("click", visaMeddelande);
 
 function visaMeddelande() {
     let meddelande = document.getElementById("inputMeddelande").value;

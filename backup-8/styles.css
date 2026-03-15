@@ -30,7 +30,10 @@
             line-height: 1.5;
             background-image:
             linear-gradient(rgba(248, 244, 236, 0.68), rgba(248, 244, 236, 0.68)),
-            url("./image/buch.jpg");
+            image-set(
+                url("./image/buch.webp") type("image/webp"),
+                url("./image/buch.jpg") type("image/jpeg")
+            ); /* Webbläsare som inte kan ladda .webP kan välja .jpg. */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -55,7 +58,7 @@
             min-height: 100vh;
             display: grid;
             place-items: center;
-            padding: 2rem;
+            padding: 2rem 2rem 4rem;
         }
 
         .card {
@@ -245,8 +248,8 @@
         footer {
             text-align: center;
             padding: 0.8rem;
-            margin: 0 auto 1.5rem;
-            background: rgba(255,255, 255, 0.85);
+            margin: 0 auto 3rem;
+            background: rgba(255,255, 255, 0.86);
             width: fit-content;
             border-radius: 10px;
         }
