@@ -6,21 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaktiv sida</title>
     <link rel="stylesheet" href="styles.css">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; img-src 'self'; style-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://www.googletagmanager.com;
+    img-src 'self' data: https://www.google-analytics.com; 
+    connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;
+    style-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';">
+    <!--<meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; img-src 'self'; style-src 'self';"> -->
     <meta name="description" content="En enkel övningssida">
 </head>
 
 <body class="body-bakgrund">
 
     <header>
-        <nav></nav>
-        <section class="cookie-banner" id="cookie-banner">
-            <p>Vi behöver ditt samtycke för att kunna använda analys-cookies.</p>
+        <!--<nav></nav> Sätter först dit <nav> men tar sen bort därför att ett tomt nav inte är bra semantiskt och ur tillgänglighetssynpunkt. Behöver fyllas med länkar--->
+
+        <section class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-title" tabindex="-1">
+            <!-- tabindex="-1" = cookie bannern görs fokuserbart via JS-->
+            <h2 id="cookie-title" class="visually-hidden">Cookies</h2>
+
+            <p>Vi behöver ditt samtycke för att kunna använda analys-cookies.
+            </p>
             <div class="cookie-buttons">
-                <button type="button" id="btn-ok">Ok med cookies</button>
-                <button type="button" id="btn-decline-cookies">Nej till
-                    cookies</button>
+                <button type="button" id="btn-ok"> Acceptera cookies</button>
+                <button type="button" id="btn-decline-cookies">Neka cookies</button>
             </div>
         </section>
     </header>
@@ -28,35 +41,35 @@
         <h1>Användarinteraktion</h1>
         <section class="card">
             <h2>Kontakta oss</h2>
-            <p>Lämna ett meddelande så kontaktar vi dig inom 48h för gemensam behovsanalys.</p>
+            <p>Lämna ett meddelande så kontaktar vi dig för gemensam behovsanalys.</p>
 
             <form class="formular">
                 <fieldset class="form-box">
                     <label for="namn">Namn</label>
-                    <input type="text" id="namn" name="namn" required>
+                    <input type="text" id="namn" name="namn" autocomplete="name" required>
 
-                    <label for="epost">Epost</label>
-                    <input type="email" id="epost" placeholder="din-epost@exempel.se" name="email" required>
+                    <label for="epost">E-post</label>
+                    <input type="email" id="epost" placeholder="din-epost@exempel.se" name="email" autocomplete="email"
+                        required>
 
                     <label for="inputMeddelande">Lämna ett meddelande</label>
                     <textarea id="inputMeddelande" name="meddelande" placeholder="Skriv här" rows="5"></textarea>
                 </fieldset>
+
                 <p class="info-insaml">Vi kommer att använda dina uppgifter för att svara på ditt meddelande</p>
 
                 <fieldset class="samtycke-box">
                     <legend>Samtycke</legend>
                     <div class="checkbox-och-text">
                         <label>
-                            <input type="checkbox" id="samtycke-marketing"> Jag godkänner att mina uppgifter
-                            samlas
-                            för
-                            marknadsföring från Translators AB.
+                            <input type="checkbox" id="samtycke-marketing" name="samtycke-marketing">
+                            Jag godkänner att mina uppgifter samlas för marknadsföring från Translators AB.
                         </label>
                     </div>
-                    <button type="button" id="btn-m">Skicka</button>
+
+                    <button type="submit" id="btn-m">Skicka</button>
                     <div id="output" aria-live="polite"></div>
                 </fieldset>
-
             </form>
             <!--aria-label="Skicka meddelande" behövs inte för button eftersom texten på knappen "Skicka" redan är tillräckligt bra.-->
             <section>
@@ -71,12 +84,11 @@
             </section>
         </section>
 
-        <script src="script.js"></script>
-
     </main>
     <footer>
         <p>&copy; 2026 Translators AB</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

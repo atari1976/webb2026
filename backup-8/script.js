@@ -1,19 +1,26 @@
-document.getElementById("btn-m").addEventListener("click", visaMeddelande);
+document.querySelector(".formular").addEventListener("submit", visaMeddelande);
 
-function visaMeddelande() {
+document.getElementById("btn-decline-cookies").addEventListener("click", function () {
+    localStorage.setItem("analytics-consent", "false");
+    document.getElementById("cookie-banner").style.display = "none";
+});
+
+function visaMeddelande(event) {
+    event.preventDefault();
+
     let meddelande = document.getElementById("inputMeddelande").value;
 
-    // Eftersom textContent används behövs egentligen ingen sanering här,
-    // eftersom innehållet visas som text och inte tolkas som HTML.
-    document.getElementById("output").textContent = meddelande;
+    /* Eftersom textContent används behövs egentligen ingen sanering här,
+    eftersom innehållet visas som text och inte tolkas som HTML. */
+    document.getElementById("output").textContent =
+        "Tack! Ditt meddelande har registrerats och vi återkommer inom 48 timmar.";
 }
 
 /* Alternativ JS för Google Analytics som laddas först efter samtycke */
 
-const GA_ID = "G-XXXX"; // Ersätt med ditt riktiga ID
+const GA_ID = "G-XXXX"; // Ersätt med organisationens riktiga ID
 
 function loadAnalytics() {
-    // Kontrollera så att scriptet inte redan har laddats
     if (document.getElementById("ga-script")) {
         return;
     }
@@ -32,24 +39,19 @@ function loadAnalytics() {
     gtag("config", GA_ID);
 }
 
-// Klick på acceptera
-document.getElementById("accept").addEventListener("click", function () {
+document.getElementById("btn-ok").addEventListener("click", function () {
     localStorage.setItem("analytics-consent", "true");
     loadAnalytics();
     document.getElementById("cookie-banner").style.display = "none";
 });
 
-// Kontrollera om samtycke redan finns
+const cookieBanner = document.getElementById("cookie-banner");
+
+if (cookieBanner && localStorage.getItem("analytics-consent") !== "true") {
+    cookieBanner.focus();
+}
+
 if (localStorage.getItem("analytics-consent") === "true") {
     loadAnalytics();
     document.getElementById("cookie-banner").style.display = "none";
 }
-
-
-
-/* Exempel på Google Analytics-kod som kan strida mot GDPR om den laddas direkt när sidan öppnas.
-< script src = "https://www.googletagmanager.com/gtag/js?id=G-XXXX" > 
-
-Välj i stället lösningen ovan där skriptet laddas först efter samtycke. */
-
-
