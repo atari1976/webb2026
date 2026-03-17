@@ -24,8 +24,6 @@
 <body class="body-bakgrund">
 
     <header>
-        <!--<nav></nav> Sätter först dit <nav> men tar sen bort därför att ett tomt nav inte är bra semantiskt och ur tillgänglighetssynpunkt. Behöver fyllas med länkar--->
-
         <section class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-title" tabindex="-1">
             <!-- tabindex="-1" = cookie bannern görs fokuserbart via JS-->
             <h2 id="cookie-title" class="visually-hidden">Cookies</h2>
@@ -37,7 +35,30 @@
                 <button type="button" id="btn-decline-cookies">Neka cookies</button>
             </div>
         </section>
+
+        <div class="header-bar">
+            <nav class="main-nav" aria-label="Huvudmeny">
+                <ul class="nav-list">
+                    <li><a href="#">Hem</a></li>
+                    <li><a href="#">Tjänster</a></li>
+                    <li><a href="#">Mina dokument</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <form class="login-form" action="#" method="post" aria-label="Logga in">
+                <label for="username" class="visually-hidden">Användarnamn</label>
+                <input type="text" id="username" name="username" placeholder="Användarnamn" autocomplete="username"
+                    required>
+
+                <label for="password" class="visually-hidden">Lösenord</label>
+                <input type="password" id="password" name="password" placeholder="Lösenord"
+                    autocomplete="current-password" required>
+                <button type="submit" class="login-btn">Logga in</button>
+            </form>
+        </div>
     </header>
+
     <main class="page">
         <h1>Användarinteraktion</h1>
         <section class="card">
@@ -47,7 +68,8 @@
             <form class="formular">
                 <fieldset class="form-box">
                     <label for="namn">Namn</label>
-                    <input type="text" id="namn" name="namn" autocomplete="name" required>
+                    <input type="text" id="namn" name="namn" autocomplete="name" required minlength="2" maxlength="100"
+                        pattern="[a-zåäöA-ZÅÄÖ\s'-]+">
 
                     <label for="epost">E-post</label>
                     <input type="email" id="epost" placeholder="din-epost@exempel.se" name="email" autocomplete="email"
@@ -57,7 +79,9 @@
                     <textarea id="inputMeddelande" name="meddelande" placeholder="Skriv här" rows="5"></textarea>
                 </fieldset>
 
-                <p class="info-insaml">Vi kommer att använda dina uppgifter för att svara på ditt meddelande</p>
+                <p class="info-insaml">Vi delar inte dina uppgifter med tredje part. Vi kommer att använda dina
+                    uppgifter bara i styfte att svara på ditt meddelande.
+                </p>
 
                 <fieldset class="samtycke-box">
                     <legend>Samtycke</legend>

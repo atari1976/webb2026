@@ -30,14 +30,109 @@ body {
     line-height: 1.5;
     background-image:
         linear-gradient(rgba(248, 244, 236, 0.68), rgba(248, 244, 236, 0.68)),
-        image-set(
-            url("./image/buch.webp") type("image/webp"),
-            url("./image/buch.jpg") type("image/jpeg")
-        );
+        url("./image/buch.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+/*body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-image:
+        linear-gradient(rgba(248, 244, 236, 0.68), rgba(248, 244, 236, 0.68)),
+        image-set(
+            url("./image/buch.webp") type("image/webp"),
+            url("./image/buch.jpg") type("image/jpeg"));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}*/
+
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.9rem 1.2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(80,60,30,0.08);
+
+    position: fixed;
+    top: 0rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    width: auto;
+    /*transform: translateX(-50%);*/
+    /*width: calc(100% - 1rem);*/
+    /* max-width: 1100px; */
+    z-index: 20;    
+} 
+
+.main-nav {
+    flex: 1;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-list a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3rem 0.4rem;
+    border-radius: 5px;
+}
+
+.nav-list a:hover, .nav-list a:focus-visible {
+    background: rgba(124, 106, 82, 0.12);
+    outline: none;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.login-form input {
+    width: 190px;
+    padding: 0.4rem 1.2rem;
+    font: inherit;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: #fff;
+    font-size: 1rem;
+}
+
+.login-btn {
+    padding: 0.55rem 0.9rem;
+    font: inherit;
+    border: 1px solid var(--button-border);
+    border-radius: 8px;
+    background: var(--button-bg);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0, 0.12);    
 }
 
 h1,
@@ -46,7 +141,7 @@ h2 {
 }
 
 h1 {
-    margin: 150px auto 35px;
+    margin: 150px auto 40px;
     background: rgba(255, 255, 255, 0.85);
     padding: 0.5rem 1.5rem;
     border-radius: 10px;
@@ -73,33 +168,34 @@ h1 {
     box-shadow: 0 6px 18px rgba(80, 60, 30, 0.08);
     text-align: center;
 
-    p {
+}
+
+.card p {
         max-width: 55ch;
         margin: 0 auto;
     }
-}
 
 .formular {
     width: 100%;
     display: grid;
     gap: 1rem;
     margin-top: 1rem;
+}
 
-    input[type="text"],
-    input[type="email"],
-    textarea {
+.formular input[type="text"],
+.formular input[type="email"],
+.formular textarea {
         width: 100%;
         padding: 0.7rem 0.8rem;
         font: inherit;
         border: 1px solid var(--input-border);
         border-radius: 9px;
         background: #fff;
-    }
+}
 
-    textarea {
+.formular textarea {
         resize: vertical;
         min-height: 120px;
-    }
 }
 
 .form-box,
@@ -133,8 +229,8 @@ label {
     font-weight: 600;
 }
 
-.checkbox-och-text {
-    label {
+
+.checkbox-och-text label{
         display: grid;
         grid-template-columns: 18px 1fr;
         gap: 0.75rem;
@@ -143,7 +239,7 @@ label {
         padding: 1rem;
         font-size: 0.95rem;
     }
-}
+
 
 input[type="checkbox"] {
     width: auto;
@@ -175,7 +271,7 @@ input[type="checkbox"] {
 
 #btn-decline-cookies {
     background-color: var(--button-decline-bg);
-    border: 1px solid var(--button-decline-border);
+    border: 1px solid var(--button-border);
 }
 
 #btn-m {
@@ -188,6 +284,13 @@ input[type="checkbox"] {
 #btn-decline-cookies:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #7c6a52;
+    outline-offset: 2px;
 }
 
 #output {
@@ -207,7 +310,7 @@ input[type="checkbox"] {
     transform: translateX(-50%);
     max-width: 420px;
     width: calc(100% - 2rem);
-    z-index: 10;
+    z-index: 30;
     display: grid;
     gap: 1rem;
     padding: 1rem 1.25rem;
@@ -215,26 +318,27 @@ input[type="checkbox"] {
     border: 1px solid var(--border);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(60, 40, 20, 0.1);
-    text-align: center;
+    text-align: center;     
 
-    .cookie-banner:focus {
+}
+
+.cookie-banner p {
+        max-width: 28ch;
+        margin: 0 auto;
+    }
+.cookie-banner:focus {
         outline: 2px solid #7c6a72;
         outline-offset: 3px;
     }
 
-     .cookie-banner p {
-        max-width: 28ch;
-        margin: 0 auto;
-    }
-
-    .cookie-buttons {
+.cookie-banner .cookie-buttons {
         display: flex;
         justify-content: center;
         gap: 0.5rem;
         flex-wrap: wrap;
         margin-top: 0.5rem;
-    }
 }
+
 
 img {
     width: 100%;
@@ -266,9 +370,62 @@ footer {
     border: 0;
 }
 
+@media (max-width: 900px) {
+    .header-bar {
+        top: 0rem;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+    .nav-list {
+        justify-content: center;
+    }
+
+    .login-form {
+        justify-content: center;
+    }
+
+    .login-form input {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
 @media (max-width: 700px) {
+
+    .header-bar {
+        left: 0.75rem;
+        right: 0.75rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .nav-list {
+        justify-content: center;
+        gap: 0.75rem 1.25rem;
+    }
+
+    .login-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .login-form input, .login-btn{
+        width: 100%;
+        max-width: none;  
+    }
+
     h1 {
-        margin: 120px auto 25px;
+        margin: 320px auto 25px;
         font-size: 1.5rem;
         padding: 0.5rem 1rem;
     }
@@ -286,8 +443,9 @@ footer {
         left: 0.75rem;
         right: 0.75rem;
         padding: 1rem;
+        transform: none;
+        width: auto;
     }
-
 
     .cookie-buttons {
         flex-direction: column;
