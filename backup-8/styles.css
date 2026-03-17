@@ -468,3 +468,35 @@ footer {
     }
 }
 
+@media (max-width: 400px) {
+    .page {
+        padding: 1rem 0.5rem 2rem;
+    }
+
+    h1 {
+        margin: 300px auto 20px;
+        padding: 0.5rem 0.8rem;
+        width: auto;
+        max-width: 95%;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    h1 {
+        padding: 1rem;
+        font-size: 1.2rem;
+        margin: 360px auto 20px;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+}
